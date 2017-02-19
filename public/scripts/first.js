@@ -1,33 +1,50 @@
 
+
 var container = document.getElementById('container');
 var dotsArr = [];
+// var dot;
+// var anima;
+
 
 function createDots() {
-  // var randomKey = Math.random().toString(36).substring(7);
-  // console.log(randomKey);
 
+  // create element
+  // push to array and DOM
   var dot = document.createElement('i');
-  // dot.setAttribute('id',randomKey);
   container.appendChild(dot);
   dotsArr.push(dot);
-  // console.log(dotsArr);
 
+  // get random values
   var x = getRandomInt(-220,220);
   var y = getRandomInt(-220,220);
 
+  // animate to
   TweenMax.to(dot, 2, {
     transform: 'translate(' + x + 'px,' + y + 'px)',
-    onComplete: fim,
-    // delay: 0.5
+    onComplete: kill,
   });
-  console.log('dot created', x, y);
 }
 
-function fim() {
-  console.log('animacao acabou');
-  console.log(getRandomInt(60,420));
+
+
+
+
+// check every dot, to see if it's animating
+// if not, remove from DOM and array
+function kill() {
+  for (var i = 0; i < dotsArr.length; i++) {
+    if (TweenMax.isTweening(dotsArr[i]) == false) {
+      container.removeChild(dotsArr[i]);
+      dotsArr.splice(i,1);
+    }
+  }
 }
 
+
+
+
+
+// random number
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -44,12 +61,9 @@ function setup() {
 }
 
 function draw() {
-  // console.log('yo');
+
   if (mouseIsPressed) {
     createDots();
-    // fill(0);
-  } else {
-    // fill(255);
   }
 
 }
