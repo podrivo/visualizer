@@ -1,5 +1,7 @@
-html {
+html, body {
   overflow: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased !important;
 }
 
 body {
@@ -17,6 +19,14 @@ body {
     line-height: 1.4em;
     text-transform: uppercase;
     text-align: center;
+    color: white;
+
+    em {
+      font-family: serif;
+      text-transform: lowercase;
+      font-weight: lighter;
+      font-style: italic;
+    }
   }
 
   canvas {
@@ -47,8 +57,8 @@ body {
     left: 0;
     right: 0;
     margin: auto;
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
     border-radius: 100%;
     z-index: -1;
   }

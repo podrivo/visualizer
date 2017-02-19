@@ -6,6 +6,23 @@ var dotsArr = [];
 // var anima;
 
 
+palette1 = ['#25BEEA', '#C6483F', '#D0832A', '#AB5D45', '#EB675D', '#5B194A', '#A13084']
+palette2 = ['#1D1D1D', '#C54A41', '#FCB461', '#EA695F', '#30B8FF', '#5AAAD3', '#4B2040']
+palette3 = ['#2F263B', '#124EAB', '#E27E77', '#1571FF', '#2B3548', '#FFCFB6', '#F6B7CE']
+palette4 = ['#266EFF', '#E27E77', '#FFCFB6', '#F6B7CE', '#2B3548', '#124EAB', '#0098FF']
+palette5 = ['#29313A', '#E27E77', '#FFCFB6', '#266EFF', '#FFFEF1', '#30B8FF', '#4C4E8D', '#B8B8B8']
+var paletteArr = [palette1, palette2, palette3, palette4, palette5]
+var randomPaletteArr = paletteArr[Math.floor(Math.random() * paletteArr.length)]
+function randomColor() {
+  // Utils.randomChoice(ranColorArr)
+  return randomPaletteArr[Math.floor(Math.random() * randomPaletteArr.length)]
+}
+document.body.style.backgroundColor = randomPaletteArr[0];
+console.log(randomPaletteArr);
+
+
+
+
 function createDots() {
 
   // create element
@@ -14,13 +31,31 @@ function createDots() {
   container.appendChild(dot);
   dotsArr.push(dot);
 
+  // random background color
+  dot.style.backgroundColor = randomColor();
+
   // get random values
-  var x = getRandomInt(-220,220);
-  var y = getRandomInt(-220,220);
+  // var x = getRandomInt(-220,220);
+  // var y = getRandomInt(-220,220);
+
+  // movement coordinates
+  angle = getRandomInt(0,360);
+  moveAreaX = container.offsetWidth;
+  moveAreaY = container.offsetHeight;
+  // moveAreaY = container.offsetHeight*7/4;
+
+  // dotRect = dot.getBoundingClientRect();
+  // console.log(dotRect.top, rect.right, rect.bottom, dotRect.left);
+
+  // random position on the edge of a circle
+  ranX = moveAreaX * Math.cos(angle * Math.PI / 180)
+  ranY = moveAreaY * Math.sin(angle * Math.PI / 180)
+  // console.log(angle, moveAreaX, moveAreaY, ranY, ranX);
 
   // animate to
   TweenMax.to(dot, 2, {
-    transform: 'translate(' + x + 'px,' + y + 'px)',
+    x: ranX,
+    y: ranY,
     onComplete: kill,
   });
 }
