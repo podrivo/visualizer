@@ -1,8 +1,24 @@
+
+
+// DOM container, dots array and dot itself
 var container = document.getElementById('container'),
     dotsArr = [],
     dot;
 
-function createDots() {
+
+
+
+
+// random integer number
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+
+
+
+function createDots(quantity, size, time, scale) {
 
   // create element
   // push to array and DOM
@@ -11,7 +27,11 @@ function createDots() {
   dotsArr.push(dot);
 
   // random background color
+  dot.style.width = size + 'px';
+  dot.style.height = size + 'px';
   dot.style.backgroundColor = randomColor();
+  // dot.style.scale = 0;
+  // dot.style.backgroundColor = randomColor();
 
   // movement coordinates
   angle = getRandomInt(0,360);
@@ -23,12 +43,17 @@ function createDots() {
   ranY = moveAreaY * Math.sin(angle * Math.PI / 180)
 
   // animate to
-  TweenMax.to(dot, 2, {
+  TweenMax.to(dot, time, {
     x: ranX,
     y: ranY,
+    ease: Expo.easeInOut,
     onComplete: kill,
   });
 }
+
+
+
+
 
 // check every dot, to see if it's animating
 // if not, remove from DOM and array
