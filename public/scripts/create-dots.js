@@ -46,7 +46,8 @@ function createDots(quantity, size, time, scale) {
   TweenMax.to(dot, time, {
     x: ranX,
     y: ranY,
-    ease: Expo.easeInOut,
+    // ease: Expo.easeOut,
+    ease: CustomEase.create('teste', '0,0,.580,1'),
     onComplete: kill,
   });
 }

@@ -51,7 +51,7 @@ function draw() {
   function sizeM() {return getRandomInt(46, 120)};
   function sizeS() {return getRandomInt(32, 92)}
   quantity = 1;
-  time = 2;
+  time = 1;
   scale = 1;
 
   if (sound.isPlaying()) {
@@ -149,5 +149,6 @@ document.body.addEventListener('click', function(){
     }
   } else {
     sound.play();
+    // sound.setVolume(0.1);
   }
 });
