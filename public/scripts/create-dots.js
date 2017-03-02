@@ -47,7 +47,8 @@ function createDots(quantity, size, time, scale) {
     x: ranX,
     y: ranY,
     // ease: Expo.easeOut,
-    ease: CustomEase.create('teste', '0,0,.580,1'),
+    // ease: CustomEase.create('teste', '0,0,.580,1'),
+    ease: CustomEase.create('launchEffect', '0.215,0.61,0.355,1'),
     onComplete: kill,
   });
 }

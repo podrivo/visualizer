@@ -1,5 +1,5 @@
 var sound, amplitude, fft, vol, spectrum,
-    spectrumFiltered, randomSpectrum,
+    spectrumFiltered,
     counter,
     sizeL, sizeM, sizeS, quantity, time, scale;
 
@@ -51,21 +51,22 @@ function draw() {
   function sizeM() {return getRandomInt(46, 120)};
   function sizeS() {return getRandomInt(32, 92)}
   quantity = 1;
-  time = 1;
+  time = 5;
   scale = 1;
 
   if (sound.isPlaying()) {
 
     // random spectrum number
-    randomSpectrum = function() {
+    function randomSpectrum() {
       return spectrumFiltered[Math.floor(Math.random()*spectrumFiltered.length)]
     };
+    console.log((randomSpectrum()/200 * vol)*1.8);
 
     for (var i = 0; i < dotsArr.length; i++) {
 
       // flick effect
       // circlesArr[i].scale = (ranSpectrum()/200 * noise(vol))*1.8
-      TweenMax.to(dotsArr[i], time, {
+      TweenMax.to(dotsArr[i], 0, {
         scale: (randomSpectrum()/200 * noise(vol))*1.8
       });
 
@@ -76,7 +77,7 @@ function draw() {
     // small more slower
     if (vol > 0.01 && vol < 0.04 && counter > 10) {
     // if (vol >= 0 && counter >= 0) {
-      console.log('teste',vol);
+      // console.log('teste',vol);
       counter = 0;
       // createDots(2);
       createDots(quantity, sizeS()/1.6, time*(vol*420))
