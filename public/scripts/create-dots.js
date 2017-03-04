@@ -3,7 +3,7 @@
 // DOM container, dots array and dot itself
 var container = document.getElementById('container'),
     dotsArr = [],
-    dot;
+    dot, anima;
 
 
 
@@ -43,27 +43,12 @@ function createDots(quantity, size, time, scale) {
   ranY = moveAreaY * Math.sin(angle * Math.PI / 180)
 
   // animate to
-  TweenMax.to(dot, time, {
+  anima = TweenMax.to(dot, time, {
     x: ranX,
     y: ranY,
     // ease: Expo.easeOut,
     // ease: CustomEase.create('teste', '0,0,.580,1'),
     ease: CustomEase.create('launchEffect', '0.215,0.61,0.355,1'),
-    onComplete: kill,
+    onComplete: killDots,
   });
-}
-
-
-
-
-
-// check every dot, to see if it's animating
-// if not, remove from DOM and array
-function kill() {
-  for (var i = 0; i < dotsArr.length; i++) {
-    if (TweenMax.isTweening(dotsArr[i]) == false) {
-      container.removeChild(dotsArr[i]);
-      dotsArr.splice(i,1);
-    }
-  }
 }

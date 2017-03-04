@@ -1,40 +1,7 @@
-var sound, amplitude, fft, vol, spectrum,
-    spectrumFiltered,
+
+var vol, spectrum, spectrumFiltered,
     counter,
-    sizeL, sizeM, sizeS, quantity, time, scale;
-
-
-
-
-
-function preload() {
-  sound = loadSound('audio/song01.mp3');
-}
-
-
-
-
-
-function setup() {
-
-  // hide canvas
-  createCanvas(0,0);
-
-  // call amplitude and connect
-  amplitude = new p5.Amplitude();
-  amplitude.setInput(sound);
-
-  // call fft and connect
-  fft = new p5.FFT();
-  fft.setInput(sound);
-
-  sound.stop();
-  counter = 0;
-}
-
-
-
-
+    quantity, time, scale;
 
 function draw() {
 
@@ -51,7 +18,7 @@ function draw() {
   function sizeM() {return getRandomInt(46, 120)};
   function sizeS() {return getRandomInt(32, 92)}
   quantity = 1;
-  time = 5;
+  time = 5; // 5
   scale = 1;
 
   if (sound.isPlaying()) {
@@ -60,14 +27,14 @@ function draw() {
     function randomSpectrum() {
       return spectrumFiltered[Math.floor(Math.random()*spectrumFiltered.length)]
     };
-    console.log((randomSpectrum()/200 * vol)*1.8);
+    // console.log((randomSpectrum()/200 * vol)*1.8);
 
     for (var i = 0; i < dotsArr.length; i++) {
 
       // flick effect
       // circlesArr[i].scale = (ranSpectrum()/200 * noise(vol))*1.8
       TweenMax.to(dotsArr[i], 0, {
-        scale: (randomSpectrum()/200 * noise(vol))*1.8
+        // scale: (randomSpectrum()/200 * noise(vol))*1.8
       });
 
 
@@ -132,6 +99,8 @@ function draw() {
     counter++
   }
 
+  killDots();
+
 }
 
 
@@ -144,7 +113,7 @@ document.body.addEventListener('click', function(){
     sound.pause();
 
     for (var i = 0; i < dotsArr.length; i++) {
-      TweenMax.to(dotsArr[i], 1, {
+      TweenMax.to(dotsArr[i], 3, {
         scale: 0
       });
     }

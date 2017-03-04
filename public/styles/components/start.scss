@@ -38,12 +38,21 @@ body {
   }
 }
 
+@keyframes teste {
+  50% {
+    width: 80vw;
+    height: 80vh;
+  }
+}
+
 #container {
+  // background: rgba(255,255,255,.1);
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100vw;
   height: 100vh;
+  // width: 5vw;
+  // height: 5vh;
+  // animation: teste 3s ease-out infinite;
 
   display: flex;
   justify-content: center;
