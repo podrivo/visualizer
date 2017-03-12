@@ -25,7 +25,9 @@ var sound, soundUrl, streamUrl, trackInfo;
 // The Outsider is a friend of mine.
 // The majority of his tracks are on Mixcloud:
 // https://www.mixcloud.com/outsider_music/
-var trackPermalinkUrl = "https://soundcloud.com/the-outsider/the-outsider-death-by-melody";
+// var trackPermalinkUrl = "https://soundcloud.com/the-outsider/the-outsider-death-by-melody";
+var trackPermalinkUrl = "https://soundcloud.com/kennedyjones/gramatikkennedyjones";
+// var trackPermalinkUrl = "https://soundcloud.com/pum818pkin/agustin-barrios-julia-florida-barcarola-20160924";
 var clientParameter = "client_id=eab076c133468510a6efbe8ca1390e96"
 
 function get(url, callback) {
@@ -67,12 +69,13 @@ function findTrack() {
         // document.getElementById("trackArt").src = "";
       // }
       // document.getElementById("trackName").innerHTML = trackInfo.title;
-      streamUrl = trackInfo.stream_url + "?" + clientParameter;
-      // console.log(streamUrl);
+      streamUrl = "'" + trackInfo.stream_url + "?" + clientParameter + "'";
+      // audioLoaded();
+      console.log(streamUrl);
   });
 };
 // findTrack();
-console.log(findTrack(), 'teste');
+// console.log(findTrack(), 'teste');
 
 // preload();
 function preload() {

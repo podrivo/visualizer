@@ -4,7 +4,7 @@ html
     title — hypnotizing
     link(rel='stylesheet' href='styles/main.css')
 
-  body
+  body.pause
     //- .main.inactive.spotify-search
     //-   .bg-main
     //-     section.search
@@ -23,11 +23,12 @@ html
     h1#loaded This is a visualizer<br> #[em — click anywhere —]
     h2#loading.on ~ just a second ~
 
+    //- audio(preload)#audio
+      //- source(src='../audio/song01.mp3')
+      //- source(src='https://api.soundcloud.com/tracks/311734519/stream?client_id=eab076c133468510a6efbe8ca1390e96')
 
 
-  //- script(src='scripts/vendor/jquery-3.1.1.min.js')
-  script(src='scripts/vendor/p5.min.js')
-  script(src='scripts/vendor/p5.sound.min.js')
   script(src='scripts/vendor/TweenMax.min.js')
   script(src='scripts/vendor/CustomEase.min.js')
+  script(src='scripts/vendor/soundcloud-sdk-3.1.2.js')
   script(src='scripts/main.js')
