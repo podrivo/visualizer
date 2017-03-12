@@ -1,14 +1,29 @@
 doctype html
 html
   head
-    title Visualizer
+    title — hypnotizing
     link(rel='stylesheet' href='styles/main.css')
 
   body
+    //- .main.inactive.spotify-search
+    //-   .bg-main
+    //-     section.search
+    //-       .search-box
+    //-         //- .introduction-text
+    //-         //- h1 Search over 200 million songs.
+    //-         //- p Know what you want to listen to? Just search and hit play.
+    //-         //- .cancel
+    //-         form.search-form
+    //-           .query-box
+    //-             input.query-input(type='text', autocomplete='off', name='search', placeholder='type something here')
+    //-             #results
 
     //- Hi
     #container
-    h1 This is a visualizer<br> #[em — click anywhere —]
+    h1#loaded This is a visualizer<br> #[em — click anywhere —]
+    h2#loading.on ~ just a second ~
+
+
 
   //- script(src='scripts/vendor/jquery-3.1.1.min.js')
   script(src='scripts/vendor/p5.min.js')

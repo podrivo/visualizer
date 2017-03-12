@@ -14,6 +14,6 @@ function setup() {
   fft = new p5.FFT();
   fft.setInput(sound);
 
-  sound.stop();
+  // sound.stop();
   counter = 0;
 }

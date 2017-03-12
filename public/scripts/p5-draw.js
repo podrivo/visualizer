@@ -4,7 +4,7 @@ var vol, spectrum, spectrumFiltered,
     quantity, time, scale;
 
 function draw() {
-
+  
   // get data
   vol = amplitude.getLevel();
   spectrum = fft.analyze(256);
@@ -34,7 +34,7 @@ function draw() {
       // flick effect
       // circlesArr[i].scale = (ranSpectrum()/200 * noise(vol))*1.8
       TweenMax.to(dotsArr[i], 0, {
-        // scale: (randomSpectrum()/200 * noise(vol))*1.8
+        scale: (randomSpectrum()/200 * noise(vol))*1.8
       });
 
 
@@ -100,6 +100,7 @@ function draw() {
   }
 
   killDots();
+  soundLoaded();
 
 }
 
@@ -109,16 +110,5 @@ function draw() {
 
 // play after click
 document.body.addEventListener('click', function(){
-  if (sound.isPlaying()) {
-    sound.pause();
-
-    for (var i = 0; i < dotsArr.length; i++) {
-      TweenMax.to(dotsArr[i], 3, {
-        scale: 0
-      });
-    }
-  } else {
-    sound.play();
-    // sound.setVolume(0.1);
-  }
+  playSound();
 });
