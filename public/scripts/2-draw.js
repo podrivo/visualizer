@@ -35,7 +35,7 @@ function draw() {
   function sizeM() {return getRandomInt(46, 120)};
   function sizeS() {return getRandomInt(32, 92)}
   quantity = 1;
-  time = 3;
+  time = 10;
   scale = 1;
 
   if (audio.paused == false) {
@@ -63,39 +63,39 @@ function draw() {
       createDots(quantity, sizeS()*4, time*(vol/2))
     }
 
-    // small slower
-    // else if (vol > 50 && vol < 80 && counter > 10) {
-    //   counter = 0;
-    //   createDots(quantity, sizeS(), time*(vol/20));
-    // }
+    // small
+    else if (vol > 14 && vol < 20 && counter > 10) {
+      console.log('small:', vol);
+      counter = 0;
+      createDots(quantity, sizeS(), time*(vol/50));
+    }
 
     // small
-    // else if (vol > 80 && vol < 100 && counter > 10) {
-    //   counter = 0;
-    //   createDots(quantity, sizeS(), time*(vol/8));
-    // }
+    else if (vol > 20 && vol < 60 && counter > 10) {
+      counter = 0;
+      createDots(quantity, sizeS(), time*(vol/8));
+    }
 
     // medium
-    // else if (vol > 100 && vol < 120 && counter > 2) {
-    //   counter = 0;
-    //   createDots(quantity, sizeM(), time*(vol/5));
-    // }
+    else if (vol > 60 && vol < 90 && counter > 2) {
+      counter = 0;
+      createDots(quantity, sizeM(), time*(vol/5));
+    }
 
     // big
-    // else if (vol > 120 && vol < 140 && counter > 2) {
-    //   counter = 0;
-    //   createDots(quantity, sizeL(), time*(vol/5));
-    // }
+    else if (vol > 90 && vol < 120 && counter > 2) {
+      counter = 0;
+      createDots(quantity, sizeL(), time*(vol/5));
+    }
 
     // big
-    // else if (vol > 0.36 && vol < 0.46 && counter > 1) {
-    //   counter = 0;
-    //   // createDots(2);
-    //   createDots(quantity*2, sizeL(), time*(vol*6));
-    // }
+    else if (vol > 120 && vol < 130 && counter > 1) {
+      counter = 0;
+      createDots(quantity*2, sizeL(), time*(vol/120));
+    }
 
     // explosion
-    else if (vol > 130 && counter > 1) {
+    else if (vol > 135 && counter > 1) {
       console.log('explosion:', vol);
       counter = 0;
       createDots(quantity*1, sizeL(), time*(vol/50));
