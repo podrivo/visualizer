@@ -7,11 +7,12 @@ function startAnimationFrame() {
   function repeat() {
     fps = requestAnimationFrame(repeat);
     draw();
-
-    // console.log('fps running', spectrum, spectrumFiltered);
-    // console.log(analyser.fftSize, analyser.frequencyBinCount, frequencyData);
+    killDots();
+    soundLoaded();
   }
 
+  // check if theres '.pause' class in body
+  // needs '.pause' in markup to work
   if ( body.classList.contains(pause) ) {
 
     requestAnimationFrame(repeat);
@@ -22,5 +23,4 @@ function startAnimationFrame() {
     cancelAnimationFrame(fps)
     body.classList.add(pause);
   }
-
 }

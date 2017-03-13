@@ -6,68 +6,52 @@ var vol, spectrum, spectrumFiltered,
 
 
 
-function getAverageVolume(spectrum) {
-  var vals = 0;
+function getAverageSpectrum(spectrum) {
+  var values = 0;
   var length = spectrum.length;
 
-  for (var i=0; i<length; i++) {
-    vals += spectrum[i];
+  for (var i = 0; i < length; i++) {
+    values += spectrum[i];
   }
-  // console.log(vals, length);
 
-  return (vals / length)
+  return (values / length)
 }
 
 
 
 function draw() {
 
-  // get data
-  // vol = amplitude.getLevel();
-  // spectrum = fft.analyze(256);
-
-  // vol = new Uint8Array(analyser.maxDecibels);
-  // spectrum = new Uint8Array(analyser.fftSize);
+  // get data from sound
   spectrum = new Uint8Array(analyser.frequencyBinCount);
-  // spectrum2 = new Float32Array(analyser.frequencyBinCount);
   analyser.getByteFrequencyData(spectrum);
-  // analyser.getFloatFrequencyData(spectrum2);
-  // analyser.getByteTimeDomainData(spectrum);
-  // analyser.getByteFrequencyData(vol);
+  // needs to be afterwards
+  vol = getAverageSpectrum(spectrum);
 
-  vol = getAverageVolume(spectrum);
-  // console.log(vol);
-
-  // remove zeros from fft
+  // remove zeros from spectrum/fft
   spectrumFiltered = spectrum.filter(function(e) { return e !== 0 });
 
-  // console.log('fps running');
-  // console.log(spectrumFiltered, spectrum.length, average);
-
+  // createDots parameters
   function sizeL() {return getRandomInt(180, 260)};
   function sizeM() {return getRandomInt(46, 120)};
   function sizeS() {return getRandomInt(32, 92)}
   quantity = 1;
-  time = 5; // 5
+  time = 3;
   scale = 1;
 
-  // if (sound.isPlaying()) {
   if (audio.paused == false) {
-    // console.log('playing');
 
     // random spectrum number
     function randomSpectrum() {
       return spectrumFiltered[Math.floor(Math.random()*spectrumFiltered.length)]
     };
-    // console.log((randomSpectrum()/200 * vol)*1.8);
 
     for (var i = 0; i < dotsArr.length; i++) {
 
       // flick effect
-      // circlesArr[i].scale = (ranSpectrum()/200 * noise(vol))*1.8
       TweenMax.to(dotsArr[i], 0, {
         // scale: (randomSpectrum()/200 * noise(vol))*1.8
         scale: (randomSpectrum()/200 * (vol/150))*2
+        // scale: (spectrumFiltered[i]/200 * (vol/150))*2
       });
     }
 
@@ -111,29 +95,17 @@ function draw() {
     // }
 
     // explosion
-    else if (vol > 125 && counter > 1) {
+    else if (vol > 130 && counter > 1) {
       console.log('explosion:', vol);
       counter = 0;
-      createDots(quantity*1, sizeL(), time*(vol/40));
-      createDots(quantity*2, sizeM(), time*(vol/40));
+      createDots(quantity*1, sizeL(), time*(vol/50));
+      createDots(quantity*2, sizeM(), time*(vol/50));
       createDots(quantity*3, sizeS(), time*(vol/120));
       createDots(quantity*3, sizeS(), time*(vol/130));
       createDots(quantity*3, sizeS(), time*(vol/140));
     }
 
+    // increase counter
     counter++
   }
-
-  killDots();
-  // soundLoaded();
-
 }
-
-
-
-
-
-// play after click
-// document.body.addEventListener('click', function(){
-  // playSound();
-// });
