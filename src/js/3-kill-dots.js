@@ -6,8 +6,12 @@ function killDots() {
   for (var i = 0; i < dotsArr.length; i++) {
 
     // when the dot gets out of container
-    if (dotsArr[i].getBoundingClientRect().right < container.getBoundingClientRect().left || dotsArr[i].getBoundingClientRect().bottom < container.getBoundingClientRect().top || dotsArr[i].getBoundingClientRect().top > container.getBoundingClientRect().bottom ||
-    dotsArr[i].getBoundingClientRect().left > container.getBoundingClientRect().right) {
+    if (
+      dotsArr[i].getBoundingClientRect().right < container.getBoundingClientRect().left ||
+      dotsArr[i].getBoundingClientRect().bottom < container.getBoundingClientRect().top ||
+      dotsArr[i].getBoundingClientRect().top > container.getBoundingClientRect().bottom ||
+      dotsArr[i].getBoundingClientRect().left > container.getBoundingClientRect().right
+    ) {
       container.removeChild(dotsArr[i]);
       dotsArr.splice(i,1);
     }

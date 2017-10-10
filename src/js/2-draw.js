@@ -24,8 +24,7 @@ function draw() {
   // get data from sound
   spectrum = new Uint8Array(analyser.frequencyBinCount);
   analyser.getByteFrequencyData(spectrum);
-  // needs to be afterwards
-  vol = getAverageSpectrum(spectrum);
+  vol = getAverageSpectrum(spectrum); // needs to be afterwards
 
   // remove zeros from spectrum/fft
   spectrumFiltered = spectrum.filter(function(e) { return e !== 0 });
