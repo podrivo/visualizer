@@ -30,8 +30,7 @@ function createDots(quantity, size, time, scale) {
   dot.style.width = size + 'px';
   dot.style.height = size + 'px';
   dot.style.backgroundColor = randomColor();
-  // dot.style.scale = 0;
-  // dot.style.backgroundColor = randomColor();
+  dot.style.scale = 0;
 
   // movement coordinates
   angle = getRandomInt(0,360);
@@ -47,8 +46,8 @@ function createDots(quantity, size, time, scale) {
     x: ranX,
     y: ranY,
     // ease: Expo.easeOut,
-    // ease: CustomEase.create('teste', '0,0,.580,1'),
-    ease: CustomEase.create('launchEffect', '0.215,0.61,0.355,1'),
+    // ease: CustomEase.create('teste', '0, 1, 1, 1'),
+    ease: CustomEase.create('launchEffect', '.07,.85,1,1'),
     onComplete: killDots,
   });
 }

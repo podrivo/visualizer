@@ -1,3 +1,4 @@
+
 // first item is the background
 palette1 = ['#25BEEA', '#C6483F', '#D0832A', '#AB5D45', '#EB675D', '#5B194A', '#A13084']
 palette2 = ['#1D1D1D', '#C54A41', '#FCB461', '#EA695F', '#30B8FF', '#5AAAD3', '#4B2040']

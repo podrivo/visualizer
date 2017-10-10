@@ -1,0 +1,4 @@
+
+// start
+webAudioSetup();
+startAnimationFrame();
