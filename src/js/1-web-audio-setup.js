@@ -26,3 +26,15 @@ function webAudioSetup() {
     soundPlayPause();
   });
 };
+
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open('GET', 'https://api.soundcloud.com/playlists/405726?client_id=eab076c133468510a6efbe8ca1390e96', true);
+  xhttp.send();
+};
