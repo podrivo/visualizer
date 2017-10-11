@@ -20,20 +20,20 @@ module.exports = function(config, log, error, success) {
       .pipe(plumber({
         errorHandler: error
       }))
-      .pipe(sassLint({
-        rules: {
-          'single-line-per-selector': 0,
-          'property-sort-order': 0,
-          'force-pseudo-nesting': 0,
-          'no-color-keywords': 0,
-          'no-color-literals': 0,
-          'no-css-comments': 0,
-          'force-element-nesting': 0,
-          'no-transition-all': 0
-        }
-      }))
-      .pipe(sassLint.format())
-      .pipe(sassLint.failOnError())
+      // .pipe(sassLint({
+      //   rules: {
+      //     'single-line-per-selector': 0,
+      //     'property-sort-order': 0,
+      //     'force-pseudo-nesting': 0,
+      //     'no-color-keywords': 0,
+      //     'no-color-literals': 0,
+      //     'no-css-comments': 0,
+      //     'force-element-nesting': 0,
+      //     'no-transition-all': 0
+      //   }
+      // }))
+      // .pipe(sassLint.format())
+      // .pipe(sassLint.failOnError())
       .pipe(plumber.stop());
   });
 
