@@ -1,9 +1,6 @@
 
-
-
-var sound, soundUrl, streamUrl, trackInfo;
-var trackPermalinkUrl, clientId;
-
+var url, sound, soundUrl, streamUrl, trackInfo;
+var trackUrl, clientId;
 
 function get(url, callback) {
   var request = new XMLHttpRequest();
@@ -17,19 +14,17 @@ function get(url, callback) {
 }
 
 
-// trackPermalinkUrl = "https://soundcloud.com/the-outsider/the-outsider-death-by-melody";
-trackPermalinkUrl = "https://soundcloud.com/kennedyjones/gramatikkennedyjones";
-// trackPermalinkUrl = "https://soundcloud.com/pum818pkin/agustin-barrios-julia-florida-barcarola-20160924";
-trackPermalinkUrl = "https://soundcloud.com/weval/intro-preview";
+// trackUrl = "https://soundcloud.com/the-outsider/the-outsider-death-by-melody";
+// trackUrl = "https://soundcloud.com/kennedyjones/gramatikkennedyjones";
+// trackUrl = "https://soundcloud.com/pum818pkin/agustin-barrios-julia-florida-barcarola-20160924";
+trackUrl = "https://soundcloud.com/weval/intro-preview";
 clientId = "client_id=eab076c133468510a6efbe8ca1390e96"
-
+apiUrl = "https://api.soundcloud.com/resolve.json?url=" +  trackUrl + "&" + clientId
 
 function soundcloudUrl() {
-  get("https://api.soundcloud.com/resolve.json?url=" +  trackPermalinkUrl + "&" + clientId,
-    function (response) {
-      trackInfo = JSON.parse(response);
-      streamUrl = "'" + trackInfo.stream_url + "?" + clientId + "'";
-      console.log(streamUrl);
+  get(apiUrl, function(response) {
+    trackInfo = JSON.parse(response);
+    streamUrl = trackInfo.stream_url + "?" + clientId;
+    audio.src = streamUrl;
   });
 };
-// soundcloudUrl();
