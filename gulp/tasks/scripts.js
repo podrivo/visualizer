@@ -26,7 +26,7 @@ module.exports = function(config, log, error, success) {
         errorHandler: error
       }))
       .pipe(concat('main.min.js'))
-      .pipe(uglify())
+      // .pipe(uglify())
       .pipe(gulp.dest(config.scripts.build.dest))
       .pipe(browserSync.stream())
       .pipe(plumber.stop());
