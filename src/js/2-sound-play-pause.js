@@ -4,7 +4,7 @@ function soundPlayPause() {
   // if paused, start to play
   if (audio.paused) {
     audio.play();
-    gainNode.gain.value = -1;
+    // gainNode.gain.value = -1; // mute
 
   // if playing, pause and shrink dots
   } else {
