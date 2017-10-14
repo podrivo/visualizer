@@ -17,11 +17,14 @@ function get(url, callback) {
 // trackUrl = "https://soundcloud.com/the-outsider/the-outsider-death-by-melody";
 // trackUrl = "https://soundcloud.com/kennedyjones/gramatikkennedyjones";
 // trackUrl = "https://soundcloud.com/pum818pkin/agustin-barrios-julia-florida-barcarola-20160924";
-trackUrl = "https://soundcloud.com/weval/intro-preview";
-clientId = "client_id=eab076c133468510a6efbe8ca1390e96"
-apiUrl = "https://api.soundcloud.com/resolve.json?url=" +  trackUrl + "&" + clientId
+// trackUrl = "https://soundcloud.com/gramatik/10-gramatik-muy-tranquilo";
+// trackUrl = "https://soundcloud.com/weval/intro-preview";
 
-function soundcloudUrl() {
+function soundcloudUrl(inputUrl) {
+  trackUrl = inputUrl;
+  clientId = "client_id=eab076c133468510a6efbe8ca1390e96"
+  apiUrl = "https://api.soundcloud.com/resolve.json?url=" +  trackUrl + "&" + clientId
+
   get(apiUrl, function(response) {
     trackInfo = JSON.parse(response);
     streamUrl = trackInfo.stream_url + "?" + clientId;

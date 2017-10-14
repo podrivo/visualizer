@@ -8,7 +8,7 @@ function startAnimationFrame() {
     fps = requestAnimationFrame(repeat);
     draw();
     killDots();
-    soundLoaded();
+    // soundLoaded();
   }
 
   // check if theres '.pause' class in body

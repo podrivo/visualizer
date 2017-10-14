@@ -1,9 +1,14 @@
 
-function soundPlayPause() {
+function soundPlayPause(inputUrl) {
 
   // if paused, start to play
   if (audio.paused) {
-    audio.play();
+    if (audio.src) {
+      audio.play();
+    } else {
+      soundcloudUrl(inputUrl);
+      audio.play();
+    }
     // gainNode.gain.value = -1; // mute
 
   // if playing, pause and shrink dots

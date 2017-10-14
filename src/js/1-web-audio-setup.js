@@ -6,7 +6,7 @@ function webAudioSetup() {
   audio = new Audio();
 
   // get audio stream url
-  soundcloudUrl()
+  // soundcloudUrl()
 
   audio.crossOrigin='anonymous';
   audioContext = new (window.AudioContext || window.webkitAudioContext)();
