@@ -13,5 +13,4 @@ function soundPlayPause() {
       TweenMax.to(dotsArr[i], 2, {scale: 0});
     }
   }
-
 }

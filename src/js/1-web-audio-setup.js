@@ -20,8 +20,4 @@ function webAudioSetup() {
 
   analyser = audioContext.createAnalyser();
   source.connect(analyser);
-
-  document.body.addEventListener('click', function(){
-    soundPlayPause();
-  });
 };
