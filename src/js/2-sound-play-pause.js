@@ -10,7 +10,7 @@ function soundPlayPause() {
   } else {
     audio.pause();
     for (var i = 0; i < dotsArr.length; i++) {
-      TweenMax.to(dotsArr[i], 2, {scale: 0});
+      TweenMax.to(dotsArr[i], 3, {scale: 0, ease:Power3.easeOut});
     }
   }
 }
