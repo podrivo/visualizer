@@ -39,7 +39,7 @@ var config = {
     },
     'build': {
       'src': [
-        './src/css/main.scss'
+        './src/css/**/*.{css,scss,sass}'
       ],
       'dest': './dist/css'
     }
