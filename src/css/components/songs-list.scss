@@ -5,30 +5,28 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: opacity 0.3s;
 
   &.hide {
-    display: none;
+    opacity: 0;
+    pointer-events: none;
   }
 
   > .song {
+    width: 50vw;
+    height: 100vw;
     font-weight: 700;
     color: white;
-    padding: 4rem;
-    margin: 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: rgba(white, 0.3);
-    border-radius: 6px;
-    transition: all 0.2s;
+    transition: all 0.3s;
 
     &:hover,
     &:focus {
       cursor: pointer;
       background: rgba(white, 0.5);
-      transform: translateY(-3px);
-    }
-
-    &:active {
-      transform: translateY(-2px);
-      transition-duration: 0s;
     }
   }
 }
