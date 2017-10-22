@@ -8,6 +8,7 @@ function hasClass(element, cls) {
 }
 
 
+// songs
 var songsList = document.getElementsByClassName('songs-list');
 var first = document.getElementById('first');
 var second = document.getElementById('second');
@@ -25,7 +26,6 @@ second.addEventListener('click', function(e){
   songsList[0].classList.add('hide');
   e.stopPropagation();
 });
-
 
 
 // click on body

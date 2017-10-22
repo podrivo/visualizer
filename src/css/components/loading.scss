@@ -1,0 +1,20 @@
+#loading, #loaded {
+  opacity: 0;
+  &.on {opacity: 1;}
+}
+
+#loading {
+  position: absolute;
+  font-family: serif;
+  font-weight: lighter;
+  line-height: 1.4em;
+  text-transform: lowercase;
+  text-align: center;
+  color: white;
+  font-style: italic;
+  transition: opacity .8s;
+}
+
+#loaded {
+  transition: opacity 2s .5s;
+}

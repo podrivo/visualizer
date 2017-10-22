@@ -1,0 +1,15 @@
+h1 {
+  font-family: sans-serif;
+  font-weight: bold;
+  line-height: 1.4em;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+
+  em {
+    font-family: serif;
+    text-transform: lowercase;
+    font-weight: lighter;
+    font-style: italic;
+  }
+}

@@ -1,0 +1,20 @@
+*, *::before, *::after {
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
