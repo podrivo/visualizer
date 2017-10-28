@@ -8,6 +8,9 @@ function get(url, callback) {
     if (request.readyState === 4 && request.status === 200) {
       callback(request.responseText);
     }
+    if (request.status === 403) { // forbidden
+      console.log('música bloqueada :(');
+    }
   }
   request.open("GET", url, true);
   request.send(null);
