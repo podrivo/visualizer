@@ -1,9 +1,10 @@
 
 
 // DOM container, dots array and dot itself
-var container = document.getElementById('container'),
+let container = document.getElementById('container'),
     dotsArr = [],
-    dot, anima;
+    dot, anima,
+    angle, moveAreaX, moveAreaY, ranX, ranY
 
 
 

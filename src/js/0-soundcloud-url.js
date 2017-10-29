@@ -1,6 +1,6 @@
 
-var url, sound, soundUrl, streamUrl, trackInfo;
-var trackUrl, clientId;
+let url, sound, soundUrl, streamUrl, trackInfo;
+let apiUrl, trackUrl, clientId;
 
 function get(url, callback) {
   var request = new XMLHttpRequest();

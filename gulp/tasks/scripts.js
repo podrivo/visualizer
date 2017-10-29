@@ -1,4 +1,6 @@
-var gulp = require('gulp');
+// var gulp = require('gulp');
+import gulp from 'gulp'
+import babel from 'gulp-babel'
 var browserSync = require('browser-sync').create();
 var concat = require('gulp-concat');
 var eslint = require('gulp-eslint');
@@ -17,11 +19,13 @@ module.exports = function(config, log, error, success) {
       }))
       .pipe(eslint())
       .pipe(eslint.format())
+      .pipe(babel())
       .pipe(plumber.stop());
   });
 
   gulp.task('scripts:build', function() {
     return gulp.src(config.scripts.build.src)
+      .pipe(babel())
       .pipe(plumber({
         errorHandler: error
       }))

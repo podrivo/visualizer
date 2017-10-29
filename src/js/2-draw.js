@@ -1,5 +1,5 @@
 
-var vol, spectrum, spectrumFiltered,
+let vol, spectrum, spectrumFiltered,
     counter = 0,
     quantity, time, scale,
     average;

@@ -9,12 +9,15 @@ function hasClass(element, cls) {
 
 
 // songs
-var songsList = document.getElementsByClassName('songs-list');
-var first = document.getElementById('first');
-var second = document.getElementById('second');
+let inputUrl, songsList, first, second
+
+songsList = document.getElementsByClassName('songs-list')
+first = document.getElementById('first')
+second = document.getElementById('second')
 
 first.addEventListener('click', function(e){
   inputUrl = "https://soundcloud.com/weval/intro-preview";
+  // inputUrl = "https://soundcloud.com/pronouncedyea/they-truth-be-told-ye-remix";
   soundPlayPause(inputUrl);
   songsList[0].classList.add('hide');
   e.stopPropagation();

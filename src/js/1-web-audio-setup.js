@@ -1,5 +1,5 @@
 
-var audio, fps, context, source, analyser, frequencyData, gainNode;
+let audio, fps, context, audioContext, source, analyser, frequencyData, gainNode;
 
 function webAudioSetup() {
 
