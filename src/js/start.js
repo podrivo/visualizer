@@ -1,3 +1,4 @@
+import 'components/palette-colors.js'
 
 // start
 webAudioSetup();
