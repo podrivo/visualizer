@@ -1,13 +1,13 @@
 
 import { audio, analyser, webAudioSetup } from './web-audio-setup'
-import { dotsArr } from './create-dots'
+import { dotsArr, createDots, getRandomInt } from './create-dots'
 // console.log(analyser)
 // let analyser = require('./web-audio-setup').analyser
 // import analyser from './web-audio-setup'
 // let analyser = require('./web-audio-setup')
 
 // let vol, spectrum, spectrumFiltered,
-let counter
+let counter = 0
 //     quantity, time, scale,
 //     average;
 
@@ -49,7 +49,7 @@ export function draw() {
 
   if (!audio.paused) {
     // console.log('audio not paused', audio, vol)
-    console.log('audio not paused', vol)
+    // console.log('audio not paused', vol)
 
     // random spectrum number
     function randomSpectrum() {
@@ -84,24 +84,28 @@ export function draw() {
 
     // small
     else if (vol > 20 && vol < 60 && counter > 10) {
+      console.log('another small:', vol);
       counter = 0
       createDots(quantity, sizeS(), time*(vol/8))
     }
 
     // medium
     else if (vol > 60 && vol < 90 && counter > 2) {
+      console.log('medium:', vol);
       counter = 0
       createDots(quantity, sizeM(), time*(vol/5))
     }
 
     // big
     else if (vol > 90 && vol < 120 && counter > 2) {
+      console.log('big:', vol);
       counter = 0
       createDots(quantity, sizeL(), time*(vol/5))
     }
 
     // big
     else if (vol > 120 && vol < 130 && counter > 1) {
+      console.log('another big:', vol);
       counter = 0
       createDots(quantity*2, sizeL(), time*(vol/120))
     }

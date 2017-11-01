@@ -12,6 +12,6 @@ let randomPaletteArr = paletteArr[Math.floor(Math.random() * paletteArr.length)]
 document.body.style.backgroundColor = randomPaletteArr[0];
 
 // randomize previous palette colors
-function randomColor() {
+export function randomColor() {
   return randomPaletteArr[Math.floor(Math.random() * randomPaletteArr.length)]
 }

@@ -1,4 +1,5 @@
-
+import { randomColor } from './palette-colors'
+import { killDots } from './kill-dots'
 
 // DOM container, dots array and dot itself
 let container = document.getElementById('container'),
@@ -11,7 +12,7 @@ let container = document.getElementById('container'),
 
 
 // random integer number
-function getRandomInt(min, max) {
+export function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
