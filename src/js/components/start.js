@@ -1,11 +1,11 @@
-'use strict'
+// 'use strict'
 
-import './plugins/TweenMax.min.js'
-import './plugins/CustomEase.min.js'
+// import './plugins/TweenMax.min.js'
+// import './plugins/CustomEase.min.js'
 
 // import './components/palette-colors'
-import { webAudioSetup } from './components/web-audio-setup'
-import { startAnimationFrame } from './components/start-animation-frame'
+import { webAudioSetup } from './web-audio-setup'
+import { startAnimationFrame } from './start-animation-frame'
 // import { soundPlayPause } from './components/sound-play-pause'
 // import { audio } from './components/web-audio-setup'
 
