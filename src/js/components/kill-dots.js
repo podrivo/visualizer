@@ -1,7 +1,8 @@
+import { dotsArr } from './create-dots'
 
 // check every dot
 // remove from DOM and array
-function killDots() {
+export function killDots() {
 
   for (var i = 0; i < dotsArr.length; i++) {
 

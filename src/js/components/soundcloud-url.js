@@ -1,3 +1,5 @@
+import { inputUrl } from './sound-play-pause'
+import { audio } from './web-audio-setup'
 
 let url, sound, soundUrl, streamUrl, trackInfo;
 let apiUrl, trackUrl, clientId;
@@ -23,7 +25,7 @@ function get(url, callback) {
 // trackUrl = "https://soundcloud.com/gramatik/10-gramatik-muy-tranquilo";
 // trackUrl = "https://soundcloud.com/weval/intro-preview";
 
-function soundcloudUrl(inputUrl) {
+export function soundcloudUrl(inputUrl) {
   trackUrl = inputUrl;
   clientId = "client_id=eab076c133468510a6efbe8ca1390e96"
   apiUrl = "https://api.soundcloud.com/resolve.json?url=" +  trackUrl + "&" + clientId

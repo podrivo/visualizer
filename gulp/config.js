@@ -25,7 +25,6 @@ var config = {
     },
     'build': {
       'src': [
-        './src/js/plugins/**/*.js',
         './src/js/**/*.js'
       ],
       'dest': './dist/js'

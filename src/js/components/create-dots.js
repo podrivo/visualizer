@@ -2,7 +2,7 @@
 
 // DOM container, dots array and dot itself
 let container = document.getElementById('container'),
-    dotsArr = [],
+    // dotsArr = [],
     dot, anima,
     angle, moveAreaX, moveAreaY, ranX, ranY
 
@@ -17,9 +17,9 @@ function getRandomInt(min, max) {
 
 
 
+export let dotsArr = []
 
-
-function createDots(quantity, size, time, scale) {
+export function createDots(quantity, size, time, scale) {
 
   // create element
   // push to array and DOM
