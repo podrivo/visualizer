@@ -4,7 +4,7 @@ import { killDots } from './kill-dots'
 export function startAnimationFrame() {
   
   let pause = 'pause',
-  body = document.body;
+      body = document.body
   
   function repeat() {
     let fps = requestAnimationFrame(repeat)

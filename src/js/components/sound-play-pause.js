@@ -1,10 +1,7 @@
-// import { inputUrl } from '../start'
-// import { audio } from './web-audio-setup'
-import { dotsArr } from './create-dots'
+import { hasClass } from '../tools/utils'
+import { dotsArr, createDots } from './create-dots'
 import { soundcloudUrl } from './soundcloud-url'
 import { audio } from './web-audio-setup'
-import { createDots } from './create-dots'
-// import { inputUrl } from './sound-play-pause'
 
 export function soundPlayPause(audio, inputUrl) {
   console.log('soundPlayPause', audio)
@@ -24,7 +21,7 @@ export function soundPlayPause(audio, inputUrl) {
   } else {
     audio.pause
     for (var i = 0; i < dotsArr.length; i++) {
-      TweenMax.to(dotsArr[i], 3, {scale: 0, ease:Power3.easeOut});
+      TweenMax.to(dotsArr[i], 3, {scale: 0, ease:Power3.easeOut})
     }
   }
 }
@@ -39,27 +36,21 @@ let second = document.getElementById('second')
 first.addEventListener('click', function (e) {
   inputUrl = 'https://soundcloud.com/weval/intro-preview'
   // inputUrl = "https://soundcloud.com/pronouncedyea/they-truth-be-told-ye-remix";
+  
   soundPlayPause(audio, inputUrl)
-  // soundPlayPause()
   songsList[0].classList.add('hide')
+  
   e.stopPropagation()
-});
+})
 
 second.addEventListener('click', function (e) {
-  inputUrl = 'https://soundcloud.com/gramatik/10-gramatik-muy-tranquilo'
+  inputUrl = 'https://soundcloud.com/pronouncedyea/they-truth-be-told-ye-remix'
+  
   soundPlayPause(audio, inputUrl)
-  // soundPlayPause()
   songsList[0].classList.add('hide')
+  
   e.stopPropagation()
-});
-
-function hasClass(element, cls) {
-  return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1
-}
-
-// function hasClass(target, className) {
-//   return new RegExp('(\\s|^)' + className + '(\\s|$)').test(target.className);
-// }
+})
 
 // click on body
 document.body.addEventListener('click', function () {

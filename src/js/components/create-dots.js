@@ -1,22 +1,11 @@
-import { randomColor } from './palette-colors'
+import { randomColor } from '../tools/colors'
+import { getRandomInt } from '../tools/utils'
 import { killDots } from './kill-dots'
 
 // DOM container, dots array and dot itself
 let container = document.getElementById('container'),
-    // dotsArr = [],
     dot, anima,
     angle, moveAreaX, moveAreaY, ranX, ranY
-
-
-
-
-
-// random integer number
-export function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-
 
 export let dotsArr = []
 

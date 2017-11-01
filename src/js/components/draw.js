@@ -1,17 +1,8 @@
-
+import { getRandomInt } from '../tools/utils'
 import { audio, analyser, webAudioSetup } from './web-audio-setup'
-import { dotsArr, createDots, getRandomInt } from './create-dots'
-// console.log(analyser)
-// let analyser = require('./web-audio-setup').analyser
-// import analyser from './web-audio-setup'
-// let analyser = require('./web-audio-setup')
+import { dotsArr, createDots } from './create-dots'
 
-// let vol, spectrum, spectrumFiltered,
 let counter = 0
-//     quantity, time, scale,
-//     average;
-
-
 
 function getAverageSpectrum(spectrum) {
   var values = 0
@@ -24,17 +15,10 @@ function getAverageSpectrum(spectrum) {
   return (values / length)
 }
 
-
-
 export function draw() {
-  // console.log('draw')
-
-  // get data from sound
-  // let analyserYO = analyser
   let spectrum = new Uint8Array(analyser.frequencyBinCount)
   analyser.getByteFrequencyData(spectrum)
   let vol = getAverageSpectrum(spectrum) // needs to be afterwards
-  // console.log(dotsArr, vol, spectrum)
 
   // remove zeros from spectrum/fft
   let spectrumFiltered = spectrum.filter(function(e) { return e !== 0 })
@@ -48,8 +32,6 @@ export function draw() {
   let scale = 1
 
   if (!audio.paused) {
-    // console.log('audio not paused', audio, vol)
-    // console.log('audio not paused', vol)
 
     // random spectrum number
     function randomSpectrum() {
@@ -57,7 +39,6 @@ export function draw() {
     }
 
     for (var i = 0; i < dotsArr.length; i++) {
-      console.log('entrou aqui')
 
       // flick effect
       TweenMax.to(dotsArr[i], 0, {
@@ -68,51 +49,51 @@ export function draw() {
     }
 
     // circle creation
-    // small and slower
+    // smaller and slower
     if (vol > 5 && vol < 14 && counter > 6) {
-      console.log('small and slower:', vol)
+      // console.log('smaller and slower:', vol)
       counter = 0
       createDots(quantity, sizeS()*4, time*(vol/2))
     }
 
-    // small
+    // smaller
     else if (vol > 14 && vol < 20 && counter > 10) {
-      console.log('small:', vol);
+      // console.log('smaller:', vol);
       counter = 0
       createDots(quantity, sizeS(), time*(vol/50))
     }
 
     // small
     else if (vol > 20 && vol < 60 && counter > 10) {
-      console.log('another small:', vol);
+      // console.log('small:', vol);
       counter = 0
       createDots(quantity, sizeS(), time*(vol/8))
     }
 
     // medium
     else if (vol > 60 && vol < 90 && counter > 2) {
-      console.log('medium:', vol);
+      // console.log('medium:', vol);
       counter = 0
       createDots(quantity, sizeM(), time*(vol/5))
     }
 
     // big
     else if (vol > 90 && vol < 120 && counter > 2) {
-      console.log('big:', vol);
+      // console.log('big:', vol);
       counter = 0
       createDots(quantity, sizeL(), time*(vol/5))
     }
 
-    // big
+    // biger
     else if (vol > 120 && vol < 130 && counter > 1) {
-      console.log('another big:', vol);
+      // console.log('another biger:', vol);
       counter = 0
       createDots(quantity*2, sizeL(), time*(vol/120))
     }
 
     // explosion
     else if (vol > 135 && counter > 1) {
-      console.log('explosion:', vol)
+      // console.log('explosion:', vol)
       counter = 0
       createDots(quantity*1, sizeL(), time*(vol/50))
       createDots(quantity*2, sizeM(), time*(vol/50))

@@ -1,21 +1,21 @@
 import { inputUrl } from './sound-play-pause'
 import { audio } from './web-audio-setup'
 
-let url, sound, soundUrl, streamUrl, trackInfo;
-let apiUrl, trackUrl, clientId;
+let url, sound, soundUrl, streamUrl, trackInfo,
+    apiUrl, trackUrl, clientId
 
 function get(url, callback) {
   var request = new XMLHttpRequest();
   request.onreadystatechange = function() {
     if (request.readyState === 4 && request.status === 200) {
-      callback(request.responseText);
+      callback(request.responseText)
     }
     if (request.status === 403) { // forbidden
-      console.log('música bloqueada :(');
+      console.log('música bloqueada :(')
     }
   }
-  request.open("GET", url, true);
-  request.send(null);
+  request.open("GET", url, true)
+  request.send(null)
 }
 
 
@@ -26,13 +26,13 @@ function get(url, callback) {
 // trackUrl = "https://soundcloud.com/weval/intro-preview";
 
 export function soundcloudUrl(inputUrl) {
-  trackUrl = inputUrl;
+  trackUrl = inputUrl
   clientId = "client_id=eab076c133468510a6efbe8ca1390e96"
   apiUrl = "https://api.soundcloud.com/resolve.json?url=" +  trackUrl + "&" + clientId
 
   get(apiUrl, function(response) {
-    trackInfo = JSON.parse(response);
-    streamUrl = trackInfo.stream_url + "?" + clientId;
-    audio.src = streamUrl;
+    trackInfo = JSON.parse(response)
+    streamUrl = trackInfo.stream_url + "?" + clientId
+    audio.src = streamUrl
   });
 };
