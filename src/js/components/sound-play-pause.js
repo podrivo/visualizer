@@ -1,4 +1,3 @@
-import { hasClass } from '../tools/utils'
 import { dotsArr, createDots } from './create-dots'
 import { soundcloudUrl } from './soundcloud-url'
 import { audio } from './web-audio-setup'
@@ -54,12 +53,12 @@ second.addEventListener('click', function (e) {
 
 // click on body
 document.body.addEventListener('click', function () {
-  console.log('click body/container')
-  if (hasClass(songsList[0], 'hide')) {
+  console.log('click body/container', songsList[0].classList.contains('hide'))
+  if (songsList[0].classList.contains('hide')) {
     if (audio.paused) {
       audio.play()
     } else {
-      audio.pause
+      audio.pause()
       for (var i = 0; i < dotsArr.length; i++) {
         TweenMax.to(dotsArr[i], 3, { scale: 0, ease: Power3.easeOut })
       }
