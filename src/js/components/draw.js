@@ -1,6 +1,6 @@
 import { getRandomInt } from '../tools/utils'
-import { audio, analyser, webAudioSetup } from './web-audio-setup'
-import { dotsArr, createDots } from './create-dots'
+import { audio, analyser } from '../tools/web-audio'
+import { dotsArr, createDots } from './dots'
 
 let counter = 0
 
@@ -43,8 +43,8 @@ export function draw() {
       // flick effect
       TweenMax.to(dotsArr[i], 0, {
         // scale: (randomSpectrum()/200 * noise(vol))*1.8
-        scale: (randomSpectrum()/200 * (vol/150))*2
-        // scale: (spectrumFiltered[i]/200 * (vol/150))*2
+        // scale: (randomSpectrum()/200 * (vol/150))*2
+        scale: (spectrumFiltered[i]/200 * (vol/150))*2
       })
     }
 

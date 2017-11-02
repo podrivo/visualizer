@@ -1,12 +1,11 @@
 import { randomColor } from '../tools/colors'
 import { getRandomInt } from '../tools/utils'
+import { canvasContext } from '../tools/canvas'
 import { killDots } from './kill-dots'
 
 // DOM container, dots array and dot itself
-let container = document.getElementById('container'),
-    dot, anima,
-    angle, moveAreaX, moveAreaY, ranX, ranY
-
+let container = document.getElementById('container')
+let dot, anima, angle, moveAreaX, moveAreaY, ranX, ranY
 export let dotsArr = []
 
 export function createDots(quantity, size, time, scale) {

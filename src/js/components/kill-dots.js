@@ -1,4 +1,4 @@
-import { dotsArr } from './create-dots'
+import { dotsArr } from './dots'
 
 // check every dot
 // remove from DOM and array

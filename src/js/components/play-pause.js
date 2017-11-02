@@ -1,20 +1,16 @@
-import { dotsArr, createDots } from './create-dots'
-import { soundcloudUrl } from './soundcloud-url'
-import { audio } from './web-audio-setup'
+import { audio } from '../tools/web-audio'
+import { dotsArr, createDots } from './dots'
+import { soundCloudUrl } from './soundcloud'
 
 export function soundPlayPause(audio, inputUrl) {
-  console.log('soundPlayPause', audio)
   // if paused, start to play
   if (audio.paused) {
     if (audio.src) {
-      console.log('src true', audio)
       audio.play()
     } else {
-      soundcloudUrl(inputUrl)
-      console.log('—exception!')
+      soundCloudUrl(inputUrl)
       audio.play()
     }
-    // gainNode.gain.value = -1; // mute
 
   // if playing, pause and shrink dots
   } else {
@@ -26,8 +22,6 @@ export function soundPlayPause(audio, inputUrl) {
 }
 
 export let inputUrl
-// let songsList, first, second
-
 let songsList = document.getElementsByClassName('songs-list')
 let first = document.getElementById('first')
 let second = document.getElementById('second')
@@ -52,16 +46,17 @@ second.addEventListener('click', function (e) {
 })
 
 // click on body
-document.body.addEventListener('click', function () {
-  console.log('click body/container', songsList[0].classList.contains('hide'))
-  if (songsList[0].classList.contains('hide')) {
-    if (audio.paused) {
-      audio.play()
-    } else {
-      audio.pause()
-      for (var i = 0; i < dotsArr.length; i++) {
-        TweenMax.to(dotsArr[i], 3, { scale: 0, ease: Power3.easeOut })
+export function start(){
+  document.body.addEventListener('click', function () {
+    if (songsList[0].classList.contains('hide')) {
+      if (audio.paused) {
+        audio.play()
+      } else {
+        audio.pause()
+        for (var i = 0; i < dotsArr.length; i++) {
+          TweenMax.to(dotsArr[i], 3, { scale: 0, ease: Power3.easeOut })
+        }
       }
     }
-  }
-})
+  })
+}
