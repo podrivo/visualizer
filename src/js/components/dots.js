@@ -13,8 +13,8 @@ export function createDots(quantity, size, time, scale) {
   // create element
   // push to array and DOM
   dot = document.createElement('i')
-  container.appendChild(dot)
-  dotsArr.push(dot)
+  // container.appendChild(dot)
+  // dotsArr.push(dot)
 
   // random background color
   dot.style.width = size + 'px'

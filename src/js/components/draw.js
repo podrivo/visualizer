@@ -1,6 +1,7 @@
 import { getRandomInt } from '../tools/utils'
 import { audio, analyser } from '../tools/web-audio'
 import { dotsArr, createDots } from './dots'
+import { Dot, move } from './dot-canvas'
 
 let counter = 0
 
@@ -54,6 +55,8 @@ export function draw() {
       // console.log('smaller and slower:', vol)
       counter = 0
       createDots(quantity, sizeS()*4, time*(vol/2))
+      new Dot()
+      // move()
     }
 
     // smaller
