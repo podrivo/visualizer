@@ -1,6 +1,6 @@
 import { randomColor } from '../tools/colors'
 import { getRandomInt } from '../tools/utils'
-import { canvasContext } from '../tools/canvas'
+import { context } from '../tools/canvas'
 // import { killDots } from './kill-dots'
 
 export let DotArr = []
@@ -19,11 +19,11 @@ export let DotArr = []
 // Dot.prototype.paint = function(size) {
 //   console.log('Dot.paint')
 
-//   canvasContext.beginPath()
-//   canvasContext.fillStyle = randomColor()
-//   canvasContext.arc(this.x, this.y, size, 0, 2 * Math.PI)
-//   canvasContext.closePath()
-//   canvasContext.fill()
+//   context.beginPath()
+//   context.fillStyle = randomColor()
+//   context.arc(this.x, this.y, size, 0, 2 * Math.PI)
+//   context.closePath()
+//   context.fill()
 
 //   this.move()
 // }
@@ -59,8 +59,8 @@ let ranY = moveAreaY * Math.sin(angle * Math.PI / 180)
 // let myDot
 // canvas = document.getElementById('canvas');
 // context = canvas.getContext('2d');
-// canvasContext.beginPath()
-// canvasContext.fillStyle = randomColor()
+// context.beginPath()
+// context.fillStyle = randomColor()
 
 let DotObj = {
   x: window.innerWidth / 2,
@@ -77,29 +77,29 @@ export function Dot() {
 
   DotArr.push(this)
   console.log(DotArr)
-  // this.paint(DotObj, canvasContext)
-  // canvasContext.beginPath()
-  // canvasContext.fillStyle = randomColor()
-  // canvasContext.arc(DotObj.x, DotObj.y, DotObj.width, 0, 2 * Math.PI)
-  // canvasContext.closePath()
-  // canvasContext.fill()
+  // this.paint(DotObj, context)
+  // context.beginPath()
+  // context.fillStyle = randomColor()
+  // context.arc(DotObj.x, DotObj.y, DotObj.width, 0, 2 * Math.PI)
+  // context.closePath()
+  // context.fill()
   paint()
 }
 
 function paint() {
   console.log('Dot.paint')
-  canvasContext.beginPath()
-  canvasContext.fillStyle = randomColor()
-  canvasContext.arc(DotObj.x, DotObj.y, DotObj.width, 0, 2 * Math.PI)
-  canvasContext.closePath()
-  canvasContext.fill()
+  context.beginPath()
+  context.fillStyle = randomColor()
+  context.arc(DotObj.x, DotObj.y, DotObj.width, 0, 2 * Math.PI)
+  context.closePath()
+  context.fill()
   move()
-  // function drawDot(DotObj, canvasContext) {
+  // function drawDot(DotObj, context) {
   // }
 }
 
 function renderCanvas() {
-  canvasContext.clearRect(0, 0, window.innerWidth, window.innerHeight)
+  context.clearRect(0, 0, window.innerWidth, window.innerHeight)
   paint()
 }
 

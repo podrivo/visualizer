@@ -1,6 +1,6 @@
 import { randomColor } from '../tools/colors'
 import { getRandomInt } from '../tools/utils'
-import { canvasContext } from '../tools/canvas'
+import { context } from '../tools/canvas'
 import { killDots } from './kill-dots'
 
 // DOM container, dots array and dot itself
@@ -38,7 +38,7 @@ export function createDots(quantity, size, time, scale) {
     // ease: Expo.easeOut,
     // ease: CustomEase.create('teste', '0, 1, 1, 1'),
     ease: CustomEase.create('launchEffect', '.07,.85,1,1'),
-    onComplete: killDots,
+    // onComplete: killDots,
     force3D: true
   })
 }

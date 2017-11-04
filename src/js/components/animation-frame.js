@@ -9,7 +9,7 @@ export function startAnimationFrame() {
   function repeat() {
     let fps = requestAnimationFrame(repeat)
     draw()
-    killDots()
+    // killDots()
     // soundLoaded();
   }
 

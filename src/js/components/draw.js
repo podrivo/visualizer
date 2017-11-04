@@ -1,7 +1,10 @@
 import { getRandomInt } from '../tools/utils'
+import { randomColor } from '../tools/colors'
+import { context } from '../tools/canvas'
 import { audio, analyser } from '../tools/web-audio'
 import { dotsArr, createDots } from './dots'
 import { Dot, move } from './dot-canvas'
+import { Circle } from './circle'
 
 let counter = 0
 
@@ -15,6 +18,8 @@ function getAverageSpectrum(spectrum) {
 
   return (values / length)
 }
+
+// createParticle
 
 export function draw() {
   let spectrum = new Uint8Array(analyser.frequencyBinCount)
@@ -31,6 +36,11 @@ export function draw() {
   let quantity = 1
   let time = 10
   let scale = 1
+  
+  let startX = window.innerWidth / 2
+  let startY = window.innerHeight / 2
+  let size = 10
+  let color = randomColor()
 
   if (!audio.paused) {
 
@@ -54,8 +64,14 @@ export function draw() {
     if (vol > 5 && vol < 14 && counter > 6) {
       // console.log('smaller and slower:', vol)
       counter = 0
-      createDots(quantity, sizeS()*4, time*(vol/2))
-      new Dot()
+      // createDots(quantity, sizeS()*4, time*(vol/2))
+      // new Dot()
+      const circle = new Circle(startX, startY, size, color)
+      dotsArr.push(circle)
+      // TweenMax.fromTo(circle, 1, { x: 0 }, { x: 100 }, 2.75)
+      // TweenMax.to(circle, 4, { bezier: { values: [{ x: 100, y: 40 }, { x: 150, y: 240 }, { x: 300, y: 180 }] }, width: 120, height: 120, onUpdate: circle.update(context), ease: Back.easeOut.config(2) });
+      // circle.render(context)
+      // console.log(circle, dotsArr)
       // move()
     }
 
