@@ -17,7 +17,7 @@ export class Circle {
 
   render(context) {
     // context.restore()
-    console.log('render rodou')
+    // console.log('render rodou')
     context.beginPath()
     context.arc(this.x, this.y, this.size, 0, 2 * Math.PI)
     context.closePath()
@@ -27,7 +27,7 @@ export class Circle {
   }
   
   tween() {
-    console.log('tween acabou')
+    // console.log('tween acabou')
     // movement coordinates
     let angle = getRandomInt(0, 360)
     let ranX = window.innerWidth * Math.cos(angle * Math.PI / 180)
@@ -42,7 +42,10 @@ export class Circle {
       // ease: CustomEase.create('launchEffect', '.07,.85,1,1'),
       onUpdate: () => {
         context.clearRect(0, 0, window.innerWidth, window.innerHeight)
-        this.update(context)
+        CircleArr.forEach((circle) => {
+          circle.update(context)
+        })
+        // this.update(context)
       },
       // onComplete: () => {
       //   console.log('TweenMax acabou')
@@ -54,7 +57,7 @@ export class Circle {
   
   update(context) {
     // TweenMax.ticker.addEventListener("tick", this.render(context));
-    console.log('update rodou')
+    // console.log('update rodou')
     
     // context.save()
     // context.clearRect(0, 0, window.innerWidth, window.innerHeight)

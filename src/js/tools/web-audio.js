@@ -15,7 +15,7 @@ export function webAudio() {
   analyser = audioContext.createAnalyser();
   source.connect(analyser);
 
-  gainNode.gain.value = -1 // mute
+  // gainNode.gain.value = -1 // mute
 }
 
 export let audio, analyser, gainNode
