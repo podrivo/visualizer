@@ -10,7 +10,7 @@ export class Circle {
     this.color = color
     
     this.render(context)
-    // this.tween()
+    this.tween()
   }
 
   render(context) {
@@ -21,19 +21,14 @@ export class Circle {
     context.fillStyle = this.color
     context.fill()
     console.log('render rodou')
-    
-    // this.tween()
   }
   
   tween() {
     // movement coordinates
     let angle = getRandomInt(0, 360)
-    let moveAreaX = window.innerWidth
-    let moveAreaY = window.innerHeight
-    // random position on the edge of a circle
-    let ranX = moveAreaX * Math.cos(angle * Math.PI / 180)
-    let ranY = moveAreaY * Math.sin(angle * Math.PI / 180)
-
+    let ranX = window.innerWidth * Math.cos(angle * Math.PI / 180)
+    let ranY = window.innerHeight * Math.sin(angle * Math.PI / 180)
+    
     // tween position
     TweenMax.to(this, 2, {
       x: ranX,
@@ -41,14 +36,9 @@ export class Circle {
       // ease: Expo.easeOut,
       // ease: CustomEase.create('teste', '0, 1, 1, 1'),
       // ease: CustomEase.create('launchEffect', '.07,.85,1,1'),
-      // onUpdate: this.update(context),
+      onUpdate: this.render(context),
       // onComplete: killDots,
       // force3D: true
     })
-    console.log('tween rodou')
-  }
-
-  update(context) {
-    this.render(context)
   }
 }

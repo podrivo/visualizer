@@ -39,7 +39,7 @@ export function draw() {
   
   let startX = window.innerWidth / 2
   let startY = window.innerHeight / 2
-  let size = 10
+  // let size = 20
   let color = randomColor()
 
   if (!audio.paused) {
@@ -66,13 +66,8 @@ export function draw() {
       counter = 0
       // createDots(quantity, sizeS()*4, time*(vol/2))
       // new Dot()
-      const circle = new Circle(startX, startY, size, color)
+      const circle = new Circle(startX, startY, sizeS(), color)
       dotsArr.push(circle)
-      // TweenMax.fromTo(circle, 1, { x: 0 }, { x: 100 }, 2.75)
-      // TweenMax.to(circle, 4, { bezier: { values: [{ x: 100, y: 40 }, { x: 150, y: 240 }, { x: 300, y: 180 }] }, width: 120, height: 120, onUpdate: circle.update(context), ease: Back.easeOut.config(2) });
-      // circle.render(context)
-      // console.log(circle, dotsArr)
-      // move()
     }
 
     // smaller
