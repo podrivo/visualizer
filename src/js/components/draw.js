@@ -4,7 +4,7 @@ import { context } from '../tools/canvas'
 import { audio, analyser } from '../tools/web-audio'
 import { dotsArr, createDots } from './dots'
 import { Dot, move } from './dot-canvas'
-import { Circle } from './circle'
+import { Circle, CircleArr } from './circle'
 
 let counter = 0
 
@@ -67,7 +67,15 @@ export function draw() {
       // createDots(quantity, sizeS()*4, time*(vol/2))
       // new Dot()
       const circle = new Circle(startX, startY, sizeS(), color)
-      dotsArr.push(circle)
+      CircleArr.push(circle)
+      // circle.render(context)
+      // console.log(circle, CircleArr)
+
+      // function teste(){
+      //   CircleArr.forEach((circle, index) => {
+      //   })
+      // }
+      // teste()
     }
 
     // smaller
