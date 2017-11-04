@@ -68,6 +68,9 @@ export function draw() {
       // new Dot()
       const circle = new Circle(startX, startY, sizeS(), color)
       CircleArr.push(circle)
+      CircleArr.forEach((circle) => {
+        circle.update(context)
+      })
       // circle.render(context)
       // console.log(circle, CircleArr)
 

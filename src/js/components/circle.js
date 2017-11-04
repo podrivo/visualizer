@@ -41,6 +41,7 @@ export class Circle {
       // ease: CustomEase.create('teste', '0, 1, 1, 1'),
       // ease: CustomEase.create('launchEffect', '.07,.85,1,1'),
       onUpdate: () => {
+        context.clearRect(0, 0, window.innerWidth, window.innerHeight)
         this.update(context)
       },
       // onComplete: () => {
