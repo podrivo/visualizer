@@ -31,11 +31,11 @@ export class Circle {
     // movement coordinates
     // (canvas size * random circular edge) + centering
     let angle = getRandomInt(0, 360)
-    let randomX = ((canvas.offsetWidth / 1) * Math.cos(angle * Math.PI / 180)) + window.innerWidth / 2
-    let randomY = ((canvas.offsetHeight / 1) * Math.sin(angle * Math.PI / 180)) + window.innerHeight / 2
+    let randomX = ((canvas.offsetWidth / 1.5) * Math.cos(angle * Math.PI / 180)) + window.innerWidth / 2
+    let randomY = ((canvas.offsetHeight / 1.5) * Math.sin(angle * Math.PI / 180)) + window.innerHeight / 2
     
     // tween position
-    TweenMax.to(this, time, {
+    TweenMax.to(this, this.time, {
       x: randomX,
       y: randomY,
       // ease: Expo.easeOut,
@@ -47,7 +47,9 @@ export class Circle {
           circle.update(context)
         })
       },
-      onComplete: () => {this.kill()}
+      onComplete: () => {
+        this.kill()
+      }
     })
   }
   

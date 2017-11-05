@@ -29,18 +29,15 @@ export function draw() {
   // remove zeros from spectrum/fft
   let spectrumFiltered = spectrum.filter(function(e) { return e !== 0 })
   
-  // createDots parameters
+  // Circle parameters
   function sizeL() {return getRandomInt(180, 260)}
   function sizeM() {return getRandomInt(46, 120)}
   function sizeS() {return getRandomInt(32, 92)}
-  let quantity = 1
+  let x = window.innerWidth / 2
+  let y = window.innerHeight / 2
   let time = 10
-  let scale = 1
-  
-  let startX = window.innerWidth / 2
-  let startY = window.innerHeight / 2
-  // let size = 20
   let color = randomColor()
+  
 
   if (!audio.paused) {
 
@@ -59,12 +56,15 @@ export function draw() {
       })
     }
 
+
+
     // circle creation
+
     // smaller and slower
     if (vol > 5 && vol < 14 && counter > 6) {
       // console.log('smaller and slower:', vol)
       counter = 0
-      const circle = new Circle(startX, startY, sizeS(), color)
+      const circle = new Circle(x, y, sizeS(), time, color)
       CircleArr.push(circle)
     }
 
@@ -73,7 +73,7 @@ export function draw() {
       // console.log('smaller:', vol);
       counter = 0
       // createDots(quantity, sizeS(), time*(vol/50))
-      const circle = new Circle(startX, startY, sizeS(), color)
+      const circle = new Circle(x, y, sizeS(), time, color)
       CircleArr.push(circle)
     }
 
@@ -82,7 +82,7 @@ export function draw() {
       // console.log('small:', vol);
       counter = 0
       // createDots(quantity, sizeS(), time*(vol/8))
-      const circle = new Circle(startX, startY, sizeS(), color)
+      const circle = new Circle(x, y, sizeS(), time, color)
       CircleArr.push(circle)
     }
 
@@ -91,7 +91,7 @@ export function draw() {
       // console.log('medium:', vol);
       counter = 0
       // createDots(quantity, sizeM(), time*(vol/5))
-      const circle = new Circle(startX, startY, sizeM(), color)
+      const circle = new Circle(x, y, sizeM(), time, color)
       CircleArr.push(circle)
     }
 
@@ -100,7 +100,7 @@ export function draw() {
       // console.log('big:', vol);
       counter = 0
       // createDots(quantity, sizeL(), time*(vol/5))
-      const circle = new Circle(startX, startY, sizeL(), color)
+      const circle = new Circle(x, y, sizeL(), time, color)
       CircleArr.push(circle)
     }
 
@@ -109,7 +109,7 @@ export function draw() {
       // console.log('another biger:', vol);
       counter = 0
       // createDots(quantity*2, sizeL(), time*(vol/120))
-      const circle = new Circle(startX, startY, sizeL(), color)
+      const circle = new Circle(x, y, sizeL(), time, color)
       CircleArr.push(circle)
     }
 
