@@ -64,21 +64,8 @@ export function draw() {
     if (vol > 5 && vol < 14 && counter > 6) {
       // console.log('smaller and slower:', vol)
       counter = 0
-      // createDots(quantity, sizeS()*4, time*(vol/2))
-      // new Dot()
       const circle = new Circle(startX, startY, sizeS(), color)
       CircleArr.push(circle)
-      // CircleArr.forEach((circle) => {
-      //   circle.update(context)
-      // })
-      // circle.render(context)
-      // console.log(circle, CircleArr)
-
-      // function teste(){
-      //   CircleArr.forEach((circle, index) => {
-      //   })
-      // }
-      // teste()
     }
 
     // smaller
