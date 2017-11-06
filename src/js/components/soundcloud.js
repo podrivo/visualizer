@@ -1,8 +1,7 @@
-import { audio } from '../tools/web-audio'
+import { audio } from '../tools/audio'
 import { inputUrl } from './play-pause'
 
-let url, sound, soundUrl, streamUrl, trackInfo,
-    apiUrl, clientId
+let url, sound, soundUrl, streamUrl, trackInfo, apiUrl, clientId
 
 function get(url, callback) {
   var request = new XMLHttpRequest();

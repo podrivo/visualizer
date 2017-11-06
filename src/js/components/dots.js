@@ -1,6 +1,6 @@
 import { randomColor } from '../tools/colors'
 import { getRandomInt } from '../tools/utils'
-import { canvasContext } from '../tools/canvas'
+// import { canvasContext } from '../tools/canvas'
 import { killDots } from './kill-dots'
 
 // DOM container, dots array and dot itself

@@ -1,5 +1,5 @@
 import { getRandomInt } from '../tools/utils'
-import { audio, analyser } from '../tools/web-audio'
+import { audio, analyser } from '../tools/audio'
 import { dotsArr, createDots } from './dots'
 
 let counter = 0

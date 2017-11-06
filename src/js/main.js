@@ -1,6 +1,10 @@
 import './plugins/TweenMax.min.js'
 import './plugins/CustomEase.min.js'
 
-import './components/start'
-// import './components/dots'
-// import './components/play-pause'
+import { webAudio } from './tools/audio'
+import { startAnimationFrame } from './animation-frame'
+import { clickBodyPause } from './play-pause'
+
+webAudio()
+startAnimationFrame()
+clickBodyPause()

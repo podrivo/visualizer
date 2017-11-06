@@ -1,4 +1,4 @@
-import { audio } from '../tools/web-audio'
+import { audio } from '../tools/audio'
 import { dotsArr, createDots } from './dots'
 import { soundCloudUrl } from './soundcloud'
 
@@ -46,7 +46,7 @@ second.addEventListener('click', function (e) {
 })
 
 // click on body
-export function start(){
+export function clickBodyPause(){
   document.body.addEventListener('click', function () {
     if (songsList[0].classList.contains('hide')) {
       if (audio.paused) {
