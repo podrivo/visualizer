@@ -6,6 +6,9 @@ import { spectrumFiltered, vol } from './draw'
 let canvas = document.getElementById('canvas')
 
 export let CircleArr = []
+function randomSpectrum() {
+  return spectrumFiltered[Math.floor(Math.random() * spectrumFiltered.length)]
+}
 
 export class Circle {
   constructor (x, y, size, time, color) {
@@ -18,8 +21,9 @@ export class Circle {
     this.render(context)
     this.tween()
   }
-
+  
   render(context) {
+    console.log('render')
     context.globalCompositeOperation = 'screen'
     context.beginPath()
     context.arc(this.x, this.y, this.size, 0, 2 * Math.PI)
@@ -30,6 +34,7 @@ export class Circle {
   }
   
   tween() {
+    console.log('tween')
     // movement coordinates
     // (canvas size * random circular edge) + centering
     let angle = getRandomInt(0, 360)
@@ -54,18 +59,21 @@ export class Circle {
   }
 
   beat(context) {
+    console.log('beat')
     TweenMax.to(this, 0, {
-      size: vol
+      size: (randomSpectrum() / 5) * (vol / 10)
     })
-    this.render(context)
+    // this.render(context)
   }
 
   update(context) {
+    console.log('update')
     this.render(context)
     this.beat(context)
   }
 
   kill() {
+    console.log('kill')
     let c = CircleArr.indexOf(this)
     CircleArr.splice(c, 1)
   }
