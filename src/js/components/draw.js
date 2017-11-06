@@ -87,7 +87,7 @@ export function draw() {
     // smaller and slower
     if (vol > 5 && vol < 14 && counter > 6) {
       // console.log('smaller and slower:', vol)
-0
+      counter = 0
       const circle = new Circle(x, y, sizeS, time, color)
       CircleArr.push(circle)
       // circle.beat(context)

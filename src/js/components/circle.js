@@ -61,7 +61,7 @@ export class Circle {
   beat(context) {
     console.log('beat')
     TweenMax.to(this, 0, {
-      size: (randomSpectrum() / 5) * (vol / 10)
+      size: ((randomSpectrum() / 5) * (vol / 20)) / 2
     })
     // this.render(context)
   }
