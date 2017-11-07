@@ -8,6 +8,7 @@ export function webAudio() {
   let source = audioContext.createMediaElementSource(audio)
   source.connect(audioContext.destination)
   
+  let gainNode = audioContext.createGain()
   gainNode.connect(audioContext.destination)
   source.connect(gainNode);
   
