@@ -11,7 +11,7 @@ export function kill() {
     ) {
       container.removeChild(DotsArr[i])
       DotsArr.splice(i, 1)
-      console.log(DotsArr)
+      console.log(DotsArr, container)
     }
   }
 }
