@@ -1,4 +1,5 @@
 import { DotsArr } from './dots'
+import { container } from '../tools/utils'
 
 // check every dot - remove from DOM and array
 export function kill() {
@@ -11,7 +12,6 @@ export function kill() {
     ) {
       container.removeChild(DotsArr[i])
       DotsArr.splice(i, 1)
-      console.log(DotsArr, container)
     }
   }
 }

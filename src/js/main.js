@@ -4,9 +4,9 @@ import './plugins/CustomEase.min.js'
 
 // tools
 import { webAudio } from './tools/audio'
-import { raf } from './tools/raf'
 
 //components
+import { raf } from './components/raf'
 import { clickBodyPause } from './components/play-pause'
 
 // functions

@@ -18,4 +18,4 @@ export function webAudio() {
   // gainNode.gain.value = -1 // mute
 }
 
-export let audio, analyser, gainNode
+export let audio, analyser
