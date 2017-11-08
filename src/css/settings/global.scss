@@ -17,4 +17,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  mix-blend-mode: screen;
+  background-blend-mode: screen;
 }
