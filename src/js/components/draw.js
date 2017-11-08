@@ -16,66 +16,65 @@ export function draw() {
   let sizeL = getRandomInt(180, 260)
   let sizeM = getRandomInt(46, 120)
   let sizeS = getRandomInt(32, 92)
-  let time = 12
-  let scale = 1
+  let time = 10
 
   if (!audio.paused) {
 
     // flick effect
     for (var i = 0; i < DotsArr.length; i++) {
       TweenMax.to(DotsArr[i], 0, {
-        scale: (randomArrElements(spectrumFiltered)/200 * (vol/200))*2
-        // scale: (spectrumFiltered[i]/200 * (vol/200))*2
+        // scale: (randomArrElements(spectrumFiltered)/200 * (vol/200))*2
+        scale: (spectrumFiltered[i]/200 * (vol/200))*2
       })
     }
 
     // smaller and slower
     if (vol > 5 && vol < 14 && counter > 6) {
       counter = 0
-      new Dot(sizeS*2, time*(vol/2))
+      new Dot(sizeS/2, time)
     }
 
     // smaller
     else if (vol > 14 && vol < 20 && counter > 10) {
       counter = 0
-      new Dot(sizeS, time*(vol/4))
+      new Dot(sizeS, time)
     }
 
     // small
     else if (vol > 20 && vol < 60 && counter > 10) {
       counter = 0
-      new Dot(sizeS, time*(vol/5))
+      new Dot(sizeS, time)
     }
 
     // medium
     else if (vol > 60 && vol < 90 && counter > 2) {
       counter = 0
-      new Dot(sizeM, time*(vol/40))
+      new Dot(sizeM, time)
     }
 
     // big
     else if (vol > 90 && vol < 120 && counter > 2) {
       counter = 0
-      new Dot(sizeL, time*(vol/60))
+      new Dot(sizeL, time)
     }
 
     // bigger
     else if (vol > 120 && vol < 130 && counter > 1) {
       counter = 0
-      new Dot(sizeL, time*(vol/80))
+      new Dot(sizeL, time)
     }
 
     // explosion
     else if (vol > 135 && counter > 1) {
       counter = 0
-      new Dot(sizeL, time*(vol/50))
-      new Dot(sizeM, time*(vol/50))
-      new Dot(sizeS, time*(vol/120))
-      new Dot(sizeS, time*(vol/130))
+      new Dot(sizeL, time)
+      new Dot(sizeM, time)
+      new Dot(sizeS, time)
+      new Dot(sizeS, time)
       
-      new Dot(sizeS, time*(vol/200))
-      new Dot(sizeS, time*(vol/205))
-      new Dot(sizeS, time*(vol/210))
+      new Dot(sizeS, time)
+      new Dot(sizeS, time)
+      new Dot(sizeS, time)
     }
 
     // increase counter

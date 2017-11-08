@@ -10,8 +10,8 @@ export function kill() {
       DotsArr[i].getBoundingClientRect().top > container.getBoundingClientRect().bottom ||
       DotsArr[i].getBoundingClientRect().left > container.getBoundingClientRect().right
     ) {
-      container.removeChild(DotsArr[i])
-      DotsArr.splice(i, 1)
+      // container.removeChild(DotsArr[i])
+      // DotsArr.splice(i, 1)
     }
   }
 }
