@@ -4,12 +4,12 @@ import './plugins/CustomEase.min.js'
 
 // tools
 import { webAudio } from './tools/audio'
+import { raf } from './tools/raf'
 
 //components
-import { startAnimationFrame } from './components/animation-frame'
 import { clickBodyPause } from './components/play-pause'
 
 // functions
+raf()
 webAudio()
-startAnimationFrame()
 clickBodyPause()

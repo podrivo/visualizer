@@ -29,7 +29,7 @@ export function draw() {
   function sizeM() {return getRandomInt(46, 120)}
   function sizeS() {return getRandomInt(32, 92)}
   let quantity = 1
-  let time = 10
+  let time = 4.6
   let scale = 1
 
   if (!audio.paused) {
