@@ -1,5 +1,5 @@
 import { audio } from '../tools/audio'
-import { dotsArr, createDots } from './dots'
+import { DotsArr } from './dots'
 import { soundCloudUrl } from './soundcloud'
 
 export function soundPlayPause(audio, inputUrl) {
@@ -15,8 +15,8 @@ export function soundPlayPause(audio, inputUrl) {
   // if playing, pause and shrink dots
   } else {
     audio.pause
-    for (var i = 0; i < dotsArr.length; i++) {
-      TweenMax.to(dotsArr[i], 3, {scale: 0, ease:Power3.easeOut})
+    for (var i = 0; i < DotsArr.length; i++) {
+      TweenMax.to(DotsArr[i], 3, {scale: 0, ease:Power3.easeOut})
     }
   }
 }
@@ -27,8 +27,7 @@ let first = document.getElementById('first')
 let second = document.getElementById('second')
 
 first.addEventListener('click', function (e) {
-  inputUrl = 'https://soundcloud.com/weval/intro-preview'
-  // inputUrl = "https://soundcloud.com/pronouncedyea/they-truth-be-told-ye-remix";
+  inputUrl = 'https://soundcloud.com/richbrian/dat-tick-prod-ananta-vinnie'
   
   soundPlayPause(audio, inputUrl)
   songsList[0].classList.add('hide')
@@ -37,7 +36,7 @@ first.addEventListener('click', function (e) {
 })
 
 second.addEventListener('click', function (e) {
-  inputUrl = 'https://soundcloud.com/pronouncedyea/they-truth-be-told-ye-remix'
+  inputUrl = 'https://soundcloud.com/dixxy-2/think-about-it'
   
   soundPlayPause(audio, inputUrl)
   songsList[0].classList.add('hide')
@@ -53,8 +52,8 @@ export function clickBodyPause(){
         audio.play()
       } else {
         audio.pause()
-        for (var i = 0; i < dotsArr.length; i++) {
-          TweenMax.to(dotsArr[i], 3, { scale: 0, ease: Power3.easeOut })
+        for (var i = 0; i < DotsArr.length; i++) {
+          TweenMax.to(DotsArr[i], 3, { scale: 0, ease: Power3.easeOut })
         }
       }
     }

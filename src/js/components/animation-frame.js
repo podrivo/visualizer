@@ -1,5 +1,5 @@
 import { draw } from './draw'
-import { killDots } from './kill-dots'
+import { kill } from './kill'
 
 export function startAnimationFrame() {
   
@@ -9,8 +9,7 @@ export function startAnimationFrame() {
   function repeat() {
     let fps = requestAnimationFrame(repeat)
     draw()
-    killDots()
-    
+    // kill()
     // soundLoaded();
   }
 
