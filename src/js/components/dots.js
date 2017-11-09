@@ -38,6 +38,7 @@ export class Dot {
       // ease: CustomEase.create('fire', '.07,.85,1,1'),
       // ease: CustomEase.create('fire', '0.075, 0.82, 0.165, 1'),
       ease: Circ.easeIn,
+      // ease: Power3.easeIn,
       force3D: true,
       // onComplete: this.die,
       // onCompleteParams: [container, dot]

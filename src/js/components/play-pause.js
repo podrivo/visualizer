@@ -27,7 +27,7 @@ let first = document.getElementById('first')
 let second = document.getElementById('second')
 
 first.addEventListener('click', function (e) {
-  inputUrl = 'https://soundcloud.com/weval/intro-preview'
+  inputUrl = 'https://soundcloud.com/podrivo/a-song/'
   // inputUrl = 'https://soundcloud.com/richbrian/dat-tick-prod-ananta-vinnie'
   
   soundPlayPause(audio, inputUrl)
