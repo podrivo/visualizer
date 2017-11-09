@@ -24,30 +24,30 @@ export function draw() {
     for (var i = 0; i < DotsArr.length; i++) {
       TweenMax.to(DotsArr[i], 0, {
         // scale: (randomArrElements(spectrumFiltered)/200 * (vol/200))*2
-        scale: (spectrumFiltered[i]/200 * (vol/200))*2
+        scale: ((spectrumFiltered[i] / 200 * (vol / 200)) * 2) + 0.2
       })
     }
 
     // smaller and slower
-    if (vol > 5 && vol < 14 && counter > 6) {
+    if (vol > 5 && vol < 14 && counter > 4) {
       counter = 0
       new Dot(sizeS/2, time)
     }
 
     // smaller
-    else if (vol > 14 && vol < 20 && counter > 10) {
+    else if (vol > 14 && vol < 20 && counter > 8) {
       counter = 0
       new Dot(sizeS, time)
     }
 
     // small
-    else if (vol > 20 && vol < 60 && counter > 10) {
+    else if (vol > 20 && vol < 60 && counter > 8) {
       counter = 0
       new Dot(sizeS, time)
     }
 
     // medium
-    else if (vol > 60 && vol < 90 && counter > 2) {
+    else if (vol > 60 && vol < 90 && counter > 1) {
       counter = 0
       new Dot(sizeM, time)
     }
