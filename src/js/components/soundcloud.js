@@ -10,20 +10,20 @@ function get(url, callback) {
       callback(request.responseText)
     }
     if (request.status === 403) { // forbidden
-      console.log('música bloqueada :(')
+      console.log('música bloqueada')
     }
   }
-  request.open("GET", url, true)
+  request.open('GET', url, true)
   request.send(null)
 }
 
 export function soundCloudUrl(inputUrl) {
-  clientId = "client_id=eab076c133468510a6efbe8ca1390e96"
-  apiUrl = "https://api.soundcloud.com/resolve.json?url=" + inputUrl + "&" + clientId
+  clientId = 'client_id=eab076c133468510a6efbe8ca1390e96'
+  apiUrl = 'https://api.soundcloud.com/resolve.json?url=' + inputUrl + '&' + clientId
 
   get(apiUrl, function(response) {
     trackInfo = JSON.parse(response)
-    streamUrl = trackInfo.stream_url + "?" + clientId
+    streamUrl = trackInfo.stream_url + '?' + clientId
     audio.src = streamUrl
   });
 };
