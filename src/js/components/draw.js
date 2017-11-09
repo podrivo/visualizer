@@ -16,14 +16,14 @@ export function draw() {
   let sizeL = getRandomInt(180, 260)
   let sizeM = getRandomInt(46, 120)
   let sizeS = getRandomInt(32, 92)
-  let time = 10
+  let time = 8
 
   if (!audio.paused) {
 
     // flick effect
     for (var i = 0; i < DotsArr.length; i++) {
       TweenMax.to(DotsArr[i], 0, {
-        // scale: (randomArrElements(spectrumFiltered)/200 * (vol/200))*2
+        // scale: ((randomArrElements(spectrumFiltered) / 200 * (vol / 200)) * 2) + 0.2
         scale: ((spectrumFiltered[i] / 200 * (vol / 200)) * 2) + 0.2
       })
     }
