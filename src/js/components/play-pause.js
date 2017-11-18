@@ -27,21 +27,21 @@ let first = document.getElementById('first')
 let second = document.getElementById('second')
 
 first.addEventListener('click', function (e) {
-  inputUrl = 'https://soundcloud.com/podrivo/a-song/'
-  // inputUrl = 'https://soundcloud.com/richbrian/dat-tick-prod-ananta-vinnie'
-  
+  // inputUrl = 'https://soundcloud.com/podrivo/a-song/'
+  inputUrl = 'https://soundcloud.com/richbrian/dat-tick-prod-ananta-vinnie'
+
   soundPlayPause(audio, inputUrl)
   songsList[0].classList.add('hide')
-  
+
   e.stopPropagation()
 })
 
 second.addEventListener('click', function (e) {
   inputUrl = 'https://soundcloud.com/dixxy-2/think-about-it'
-  
+
   soundPlayPause(audio, inputUrl)
   songsList[0].classList.add('hide')
-  
+
   e.stopPropagation()
 })
 
