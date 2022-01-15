@@ -18,10 +18,10 @@ module.exports = function(config, log, error, success) {
       notify: false
     });
 
-    gulp.watch(config.fonts.src, ['fonts', reload]);
-    gulp.watch(config.html.src, ['html', reload]);
-    gulp.watch(config.images.src, ['images', reload]);
-    gulp.watch(config.scripts.lint.src, ['scripts', reload]);
-    gulp.watch(config.styles.build.src, ['styles', reload]);
+    gulp.watch(config.fonts.src, gulp.series('fonts', reload));
+    gulp.watch(config.html.src, gulp.series('html', reload));
+    gulp.watch(config.images.src, gulp.series('images', reload));
+    gulp.watch(config.scripts.lint.src, gulp.series('scripts', reload));
+    gulp.watch(config.styles.build.src, gulp.series('styles', reload));
   });
 };

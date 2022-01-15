@@ -6,8 +6,9 @@ var concat = require('gulp-concat');
 var mmq = require('gulp-merge-media-queries');
 var plumber = require('gulp-plumber');
 var postCss = require('gulp-postcss');
-var runSequence = require('run-sequence');
-var sass = require('gulp-sass');
+// var runSequence = require('run-sequence');
+var runSequence = require('gulp4-run-sequence')
+var sass = require('gulp-sass')(require('sass'))
 var sassLint = require('gulp-sass-lint');
 var sassGlob = require('gulp-sass-glob');
 

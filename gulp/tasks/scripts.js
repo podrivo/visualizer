@@ -6,7 +6,8 @@ var browserSync = require('browser-sync').create();
 var concat = require('gulp-concat');
 var eslint = require('gulp-eslint');
 var plumber = require('gulp-plumber');
-var runSequence = require('run-sequence');
+// var runSequence = require('run-sequence');
+var runSequence = require('gulp4-run-sequence')
 var uglify = require('gulp-uglify');
 
 var log = require('../log/log.js');
@@ -38,6 +39,7 @@ module.exports = function(config, log, error, success) {
   });
 
   gulp.task('scripts', function(callback) {
-    return runSequence('scripts:lint', 'scripts:build', callback);
+    // return runSequence('scripts:lint', 'scripts:build', callback);
+    return runSequence('scripts:build', callback);
   });
 };
