@@ -41,6 +41,12 @@ export class Dot {
       // ease: Power3.easeIn,
       force3D: true,
       // onComplete: this.die,
+      onComplete: function(){
+        // this.kill()
+        // console.log('teste', DotsArr);
+        container.removeChild(this.target)
+        DotsArr.splice(this, 1)
+      },
       // onCompleteParams: [container, dot]
     })
   }

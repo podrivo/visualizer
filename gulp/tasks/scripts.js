@@ -8,10 +8,10 @@ var eslint = require('gulp-eslint');
 var plumber = require('gulp-plumber');
 // var runSequence = require('run-sequence');
 var runSequence = require('gulp4-run-sequence')
-var uglify = require('gulp-uglify');
+// var uglify = require('gulp-uglify');
 
-var log = require('../log/log.js');
-var notifyError = require('../notify/error.js');
+// var log = require('../log/log.js');
+// var notifyError = require('../notify/error.js');
 
 module.exports = function(config, log, error, success) {
   gulp.task('scripts:lint', function() {

@@ -7,6 +7,6 @@ export function raf() {
   function repeat() {
     requestAnimationFrame(repeat)
     draw()
-    kill()
+    // kill()
   }
 }

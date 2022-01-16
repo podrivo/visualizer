@@ -10,7 +10,8 @@ import { raf } from './raf'
 export function soundPlayPause(audio) {
   // if paused, start to play
   // audio.src = 'media/music1.mp3'
-  audio.src = 'media/music2.mp3'
+  // audio.src = 'media/music2.mp3'
+  audio.src = 'media/music3.mp3'
   if (audio.paused) {
     if (audio.src) {
       audio.play()
