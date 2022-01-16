@@ -1,5 +1,4 @@
 import { draw } from '../components/draw'
-import { kill } from '../components/kill'
 
 export function raf() {
   requestAnimationFrame(repeat)
@@ -7,6 +6,5 @@ export function raf() {
   function repeat() {
     requestAnimationFrame(repeat)
     draw()
-    // kill()
   }
 }

@@ -14,9 +14,9 @@ export function draw() {
   let spectrumFiltered = spectrum.filter(function(e) { return e !== 0 })
   
   // parameters
-  let sizeL = getRandomInt(180, 260)
+  let sizeL = getRandomInt(120, 210)
   let sizeM = getRandomInt(46, 100)
-  let sizeS = getRandomInt(28, 78)
+  let sizeS = getRandomInt(24, 74)
   let time = 3
   
   let volBase = 5
