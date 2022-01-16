@@ -21,6 +21,7 @@ module.exports = function(config, log, error, success) {
     gulp.watch(config.fonts.src, gulp.series('fonts', reload));
     gulp.watch(config.html.src, gulp.series('html', reload));
     gulp.watch(config.images.src, gulp.series('images', reload));
+    gulp.watch(config.media.src, gulp.series('media', reload));
     gulp.watch(config.scripts.lint.src, gulp.series('scripts', reload));
     gulp.watch(config.styles.build.src, gulp.series('styles', reload));
   });

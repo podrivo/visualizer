@@ -13,14 +13,14 @@
   }
 
   > .song {
-    width: 50vw;
+    width: 100vw;
     height: 100vw;
     font-weight: 700;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(white, 0.3);
+    // background: rgba(white, 0.3);
     transition: all 0.3s;
 
     &:hover,

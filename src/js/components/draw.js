@@ -16,7 +16,7 @@ export function draw() {
   let sizeL = getRandomInt(180, 260)
   let sizeM = getRandomInt(46, 120)
   let sizeS = getRandomInt(32, 92)
-  let time = 8
+  let time = 4
 
   if (!audio.paused) {
 

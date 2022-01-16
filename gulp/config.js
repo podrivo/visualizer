@@ -11,6 +11,12 @@ var config = {
     ],
     'dest': './dist/img'
   },
+  'media': {
+    'src': [
+      './src/media/**/*.{mp3,mp4}'
+    ],
+    'dest': './dist/media'
+  },
   'html': {
     'src': [
       './src/index.pug'

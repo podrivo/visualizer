@@ -39,7 +39,7 @@ module.exports = function(config, log, error, success) {
   });
 
   gulp.task('scripts', function(callback) {
-    // return runSequence('scripts:lint', 'scripts:build', callback);
-    return runSequence('scripts:build', callback);
+    return runSequence('scripts:lint', 'scripts:build', callback);
+    // return runSequence('scripts:build', callback);
   });
 };

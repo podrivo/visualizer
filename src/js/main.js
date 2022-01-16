@@ -10,6 +10,6 @@ import { raf } from './components/raf'
 import { clickBodyPause } from './components/play-pause'
 
 // functions
-raf()
-webAudio()
-clickBodyPause()
+// raf()
+// webAudio()
+// clickBodyPause()
