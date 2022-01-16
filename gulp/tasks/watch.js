@@ -1,7 +1,12 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var browserSync = require('browser-sync').create();
-var reload = browserSync.reload;
+// var reload = browserSync.reload;
+
+function reload(done) {
+  browserSync.reload();
+  done();
+}
 
 module.exports = function(config, log, error, success) {
   gulp.task('watch', function() {
@@ -24,5 +29,9 @@ module.exports = function(config, log, error, success) {
     gulp.watch(config.media.src, gulp.series('media', reload));
     gulp.watch(config.scripts.lint.src, gulp.series('scripts', reload));
     gulp.watch(config.styles.build.src, gulp.series('styles', reload));
+
+    // browserSync.reload();
+    // done();
+    // success()
   });
 };
