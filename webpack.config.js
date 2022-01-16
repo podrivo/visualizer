@@ -2,6 +2,7 @@ module.exports = {
   externals: {
     'TweenLite': 'TweenLite'
   },
+  mode: 'development',
   output: {
     filename: 'bundle.js',
   },
@@ -11,10 +12,11 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
         loader: 'babel-loader',
-        query: {
-          presets: [
-            ['latest', { modules: true }],
-          ],
+        options: {
+          presets: ['@babel/preset-env'],
+          // presets: [
+          //   ['latest', { modules: true }],
+          // ],
         },
       },
     ],

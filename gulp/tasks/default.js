@@ -8,7 +8,7 @@ module.exports = function(config, log, error, success) {
     var msg = gutil.colors.bgBlack(' 🚴  ') + gutil.colors.black.bgGreen(' Start building. ');
     console.log(msg);
     
-    runSequence('clean', ['fonts', 'html', 'images', 'scripts', 'styles'], success);
-    callback;
+    runSequence('clean', ['fonts', 'html', 'images', 'scripts', 'styles'], callback);
+    // callback;
   });
 };

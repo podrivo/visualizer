@@ -50,9 +50,7 @@ module.exports = function(config, log, error, success) {
       .pipe(mmq({
         log: true
       }))
-      .pipe(postCss([autoprefixer({
-        browsers: ['last 2 version']
-      })]))
+      .pipe(postCss([autoprefixer()]))
       .pipe(concat('main.min.css'))
       .pipe(cleanCss({
         level: 0

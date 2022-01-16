@@ -9,10 +9,11 @@
     "start": "gulp default && gulp watch"
   },
   "dependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.8",
+    "@babel/register": "^7.16.9",
     "autoprefixer": "^10.4.2",
-    "babel-core": "^6.26.3",
     "babel-loader": "^8.2.3",
-    "babel-preset-es2015": "^6.24.1",
     "babel-preset-latest": "^6.24.1",
     "browser-sync": "^2.27.7",
     "css-loader": "^6.5.1",
@@ -36,11 +37,13 @@
     "gulp-webpack": "^1.5.0",
     "gulp4-run-sequence": "^1.0.1",
     "node-sass": "^7.0.1",
-    "run-sequence": "^2.2.1",
     "sass": "^1.48.0",
     "sass-loader": "^12.4.0",
     "through2": "^4.0.2",
     "webpack": "^5.66.0",
     "webpack-stream": "^7.0.0"
-  }
+  },
+  "browserslist": [
+    "last 2 version"
+  ]
 }
