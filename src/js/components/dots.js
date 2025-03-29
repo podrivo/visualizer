@@ -29,8 +29,8 @@ export class Dot {
 
   anima(container, dot, time) {
     let angle = getRandomInt(0, 360)
-    let ranX = (container.offsetWidth / 2) * Math.cos(angle * Math.PI / 180)
-    let ranY = (container.offsetHeight / 2) * Math.sin(angle * Math.PI / 180)
+    let ranX = (container.offsetWidth) * Math.cos(angle * Math.PI / 180)
+    let ranY = (container.offsetHeight) * Math.sin(angle * Math.PI / 180)
     
     TweenMax.to(dot, time, {
       x: ranX,
